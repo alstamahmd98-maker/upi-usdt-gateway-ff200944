@@ -1,9 +1,11 @@
 import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
+import HeroSlider from "@/components/HeroSlider";
+import FeaturesGrid from "@/components/FeaturesGrid";
+import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
-import StatsSection from "@/components/StatsSection";
-import FeaturesSection from "@/components/FeaturesSection";
-import CTASection from "@/components/CTASection";
+import ExchangeSection from "@/components/ExchangeSection";
+import NewsSection from "@/components/NewsSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -11,11 +13,13 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <main>
-        <HeroSection />
+        <HeroSlider />
+        <FeaturesGrid />
+        <AboutSection />
         <ServicesSection />
-        <StatsSection />
-        <FeaturesSection />
-        <CTASection />
+        <ExchangeSection />
+        <NewsSection />
+        <ContactSection />
       </main>
       <Footer />
     </div>
