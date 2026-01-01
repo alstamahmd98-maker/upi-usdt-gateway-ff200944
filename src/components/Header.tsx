@@ -1,100 +1,120 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Menu, X, Wallet } from "lucide-react";
+import { Menu, X, Search, MessageCircle } from "lucide-react";
+
+const TopBar = () => (
+  <div className="bg-[hsl(var(--darker-blue))] text-white/80 text-sm py-2">
+    <div className="container mx-auto px-4 flex items-center justify-between">
+      <span>India Cross-Border Payments | Specializing in Category II & III collection services</span>
+      <div className="hidden md:flex items-center gap-4">
+        <a href="https://t.me/DJI149" className="hover:text-white transition-colors">Telegram</a>
+        <a href="#" className="hover:text-white transition-colors">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+);
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
     { label: "Home", href: "#" },
-    { label: "Services", href: "#services" },
-    { label: "Exchange", href: "#exchange" },
+    { label: "USDT exchange for INR", href: "#exchange" },
+    { label: "Core Business", href: "#services" },
+    { label: "Industry News", href: "#news" },
     { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Contact Us", href: "#contact" },
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-card/95 backdrop-blur-lg shadow-medium py-3"
-          : "bg-transparent py-5"
-      }`}
-    >
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow group-hover:scale-105 transition-transform">
-            <Wallet className="w-5 h-5 text-primary-foreground" />
-          </div>
-          <span className={`font-heading font-bold text-xl ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
-            UPI<span className="text-gradient-accent">USDT</span>
-          </span>
-        </a>
+    <>
+      <TopBar />
+      <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-white"}`}>
+        <div className="container mx-auto px-4 flex items-center justify-between h-20">
+          {/* Logo */}
+          <a href="#" className="flex items-center gap-2">
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-xl">D</span>
+            </div>
+            <span className="font-heading font-bold text-xl text-foreground">
+              DJI<span className="text-primary">-PAY</span>
+            </span>
+          </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isScrolled ? "text-foreground" : "text-primary-foreground/90"
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        {/* CTA Button */}
-        <div className="hidden md:block">
-          <Button variant={isScrolled ? "accent" : "hero"} size="lg">
-            Get Started
-          </Button>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`md:hidden p-2 rounded-lg transition-colors ${
-            isScrolled ? "text-foreground" : "text-primary-foreground"
-          }`}
-        >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-card/98 backdrop-blur-lg shadow-strong border-t border-border">
-          <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-foreground font-medium py-3 px-4 rounded-lg hover:bg-secondary transition-colors"
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
                 {link.label}
               </a>
             ))}
-            <Button variant="accent" size="lg" className="mt-2">
-              Get Started
-            </Button>
           </nav>
+
+          {/* Actions */}
+          <div className="hidden lg:flex items-center gap-3">
+            <button className="p-2 hover:bg-secondary rounded-full transition-colors">
+              <Search className="w-5 h-5 text-foreground" />
+            </button>
+            <a
+              href="https://t.me/DJI149"
+              className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span className="text-sm font-medium">Support</span>
+            </a>
+            <a
+              href="#"
+              className="px-4 py-2 bg-cta-orange text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+            >
+              WhatsApp
+            </a>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden p-2"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
-      )}
-    </header>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden bg-white border-t shadow-lg">
+            <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="py-3 px-4 text-foreground hover:bg-secondary rounded-lg transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a
+                href="https://t.me/DJI149"
+                className="mt-2 flex items-center justify-center gap-2 px-4 py-3 bg-primary text-white rounded-lg"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Contact Support
+              </a>
+            </nav>
+          </div>
+        )}
+      </header>
+    </>
   );
 };
 
