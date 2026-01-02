@@ -192,83 +192,61 @@ const UsdtExchange = () => {
           </div>
           
           <div className="container mx-auto px-3 md:px-4 relative z-10">
-            {/* Exchange Rate Card - Redesigned for Mobile */}
+            {/* Exchange Rate Card - New Style */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="max-w-sm mx-auto mb-6 md:mb-8"
+              className="max-w-xs mx-auto mb-6 md:mb-8"
             >
-              <div className="relative">
-                {/* Glow effect */}
-                <motion.div 
-                  className="absolute -inset-0.5 bg-gradient-to-r from-[#26A17B] via-cta-blue to-[#FF9F00] rounded-2xl blur-lg opacity-50"
-                  animate={{ 
-                    opacity: [0.4, 0.6, 0.4],
-                  }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                />
+              <div className="relative bg-gradient-to-br from-[hsl(var(--dark-blue))] to-[hsl(var(--darker-blue))] rounded-3xl p-1">
+                {/* Outer glow ring */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#26A17B] via-cta-blue to-[#FF9F00] opacity-30 blur-sm" />
                 
-                <div className="relative bg-[hsl(var(--dark-blue))]/95 backdrop-blur-sm border border-white/20 rounded-2xl p-5 md:p-6">
-                  {/* Header */}
-                  <div className="text-center mb-4">
-                    <span className="text-xs text-white/50 uppercase tracking-widest">Live Exchange Rate</span>
+                <div className="relative bg-[hsl(var(--darker-blue))] rounded-3xl p-4 md:p-5">
+                  {/* Top badge */}
+                  <div className="flex justify-center mb-3">
+                    <span className="px-3 py-1 bg-cta-blue/20 text-cta-blue text-[10px] font-semibold rounded-full uppercase tracking-wider">
+                      Live Rate
+                    </span>
                   </div>
                   
-                  {/* Currency Display - Vertical for Mobile */}
-                  <div className="flex flex-col items-center gap-3">
+                  {/* Main rate display */}
+                  <div className="flex items-center justify-center gap-2 md:gap-3">
                     {/* USDT */}
-                    <div className="flex items-center gap-3 w-full justify-center">
-                      <motion.div 
-                        className="w-12 h-12 rounded-full bg-gradient-to-br from-[#26A17B] to-[#1a7a5a] flex items-center justify-center shadow-lg shadow-[#26A17B]/30"
-                        animate={{ scale: [1, 1.05, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                      >
-                        <span className="text-white font-bold text-xl">₮</span>
-                      </motion.div>
-                      <div className="text-left">
-                        <span className="text-white font-bold text-2xl">1</span>
-                        <span className="text-white/60 text-sm ml-2">USDT</span>
+                    <div className="flex items-center gap-2">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#26A17B] flex items-center justify-center">
+                        <span className="text-white font-bold text-lg md:text-xl">₮</span>
                       </div>
+                      <span className="text-white font-bold text-lg md:text-xl">1</span>
                     </div>
                     
-                    {/* Arrow */}
+                    {/* Animated arrows */}
                     <motion.div 
-                      className="text-cta-blue"
-                      animate={{ y: [0, 3, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                      className="flex items-center text-white/40"
+                      animate={{ x: [0, 3, 0] }}
+                      transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
                     >
-                      <svg className="w-6 h-6 rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
+                      <span className="text-xl">⇄</span>
                     </motion.div>
                     
                     {/* INR */}
-                    <div className="flex items-center gap-3 w-full justify-center">
-                      <motion.div 
-                        className="w-12 h-12 rounded-full bg-gradient-to-br from-[#FF9F00] to-[#cc7f00] flex items-center justify-center shadow-lg shadow-[#FF9F00]/30"
-                        animate={{ scale: [1, 1.05, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                    <div className="flex items-center gap-2">
+                      <motion.span 
+                        className="text-cta-blue font-bold text-xl md:text-2xl"
+                        animate={{ textShadow: ["0 0 0px transparent", "0 0 10px hsl(var(--cta-blue))", "0 0 0px transparent"] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                       >
-                        <span className="text-white font-bold text-xl">₹</span>
-                      </motion.div>
-                      <div className="text-left">
-                        <motion.span 
-                          className="text-cta-blue font-bold text-2xl"
-                          animate={{ opacity: [1, 0.8, 1] }}
-                          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                        >
-                          105-110
-                        </motion.span>
-                        <span className="text-white/60 text-sm ml-2">INR</span>
+                        105-110
+                      </motion.span>
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FF9F00] flex items-center justify-center">
+                        <span className="text-white font-bold text-lg md:text-xl">₹</span>
                       </div>
                     </div>
                   </div>
                   
-                  {/* Footer */}
-                  <div className="mt-4 pt-3 border-t border-white/10 text-center">
-                    <p className="text-white/40 text-xs">Rate confirmed via real-time coordination</p>
-                  </div>
+                  {/* Bottom text */}
+                  <p className="text-white/30 text-[10px] text-center mt-3">Real-time · Telegram confirmed</p>
                 </div>
               </div>
             </motion.div>
@@ -354,51 +332,52 @@ const UsdtExchange = () => {
               </h2>
             </motion.div>
 
-            {/* Contact Cards Grid - 2 columns on mobile */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 max-w-6xl mx-auto">
+            {/* Contact Cards - 1 column on mobile */}
+            <div className="flex flex-col gap-2 md:grid md:grid-cols-4 md:gap-4 max-w-6xl mx-auto">
               {contacts.map((contact, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.03 }}
-                  className={`bg-[hsl(var(--dark-blue))] border rounded-xl p-2.5 md:p-4 transition-all duration-300 ${
+                  className={`bg-[hsl(var(--dark-blue))]/80 backdrop-blur-sm border rounded-xl p-3 md:p-4 transition-all duration-300 ${
                     contact.isPrimary 
                       ? 'border-cta-blue/50 ring-1 ring-cta-blue/20' 
                       : 'border-white/10'
                   }`}
                 >
-                  <h3 className="font-heading font-semibold text-white text-[10px] md:text-sm mb-2 truncate">{contact.role}</h3>
-                  
-                  {/* Telegram */}
-                  <div className="flex items-center gap-1.5 mb-1.5">
-                    <MessageCircle className="w-3 h-3 md:w-4 md:h-4 text-[#229ED9] shrink-0" />
-                    <a 
-                      href={contact.telegramLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-cta-blue hover:text-white font-medium text-[11px] md:text-sm truncate transition-colors"
-                      style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}
-                    >
-                      {contact.telegram}
-                    </a>
-                  </div>
-                  
-                  {contact.whatsapp && (
-                    <div className="flex items-center gap-1.5">
-                      <Phone className="w-3 h-3 md:w-4 md:h-4 text-[#25D366] shrink-0" />
+                  <div className="flex items-center justify-between gap-3">
+                    <h3 className="font-heading font-semibold text-white text-xs md:text-sm shrink-0">{contact.role}</h3>
+                    
+                    <div className="flex items-center gap-3 md:gap-4 flex-1 justify-end">
+                      {/* Telegram */}
                       <a 
-                        href={contact.whatsappLink || "#"}
+                        href={contact.telegramLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-cta-blue hover:text-white font-medium text-[10px] md:text-sm truncate transition-colors"
+                        className="flex items-center gap-1.5 text-cta-blue hover:text-white transition-colors"
                         style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}
                       >
-                        {contact.whatsapp}
+                        <MessageCircle className="w-4 h-4 text-[#229ED9]" />
+                        <span className="text-xs md:text-sm font-medium">{contact.telegram}</span>
                       </a>
+                      
+                      {/* WhatsApp */}
+                      {contact.whatsapp && (
+                        <a 
+                          href={contact.whatsappLink || "#"}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1.5 text-cta-blue hover:text-white transition-colors"
+                          style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}
+                        >
+                          <Phone className="w-4 h-4 text-[#25D366]" />
+                          <span className="text-xs md:text-sm font-medium hidden sm:inline">{contact.whatsapp}</span>
+                        </a>
+                      )}
                     </div>
-                  )}
+                  </div>
                 </motion.div>
               ))}
             </div>
