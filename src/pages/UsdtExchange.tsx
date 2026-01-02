@@ -95,7 +95,7 @@ const UsdtExchange = () => {
             <nav className="flex items-center gap-2 text-sm text-white/60">
               <a href="/" className="hover:text-white transition-colors">Home</a>
               <span>/</span>
-              <span className="text-cta-red">USDT exchange for INR</span>
+              <span className="text-cta-orange">USDT exchange for INR</span>
             </nav>
           </div>
         </section>
@@ -116,7 +116,7 @@ const UsdtExchange = () => {
                 <div className="text-center">
                   <p className="text-white/60 text-sm mb-2">Exchange Rate</p>
                   <p className="font-heading text-3xl md:text-4xl font-bold text-white">
-                    1 USDT ≈ <span className="text-cta-red">105 - 110</span> INR
+                    1 USDT ≈ <span className="text-cta-orange">105 - 110</span> INR
                   </p>
                   <p className="text-white/50 text-sm mt-2">
                     Rate band for illustration only. Final rate via real-time chat.
@@ -135,7 +135,7 @@ const UsdtExchange = () => {
                 ].map((tag, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-cta-red/20 text-cta-red rounded-full text-sm font-medium border border-cta-red/30"
+                    className="px-4 py-2 bg-cta-orange/20 text-cta-orange rounded-full text-sm font-medium border border-cta-orange/30"
                   >
                     {tag}
                   </span>
@@ -154,8 +154,8 @@ const UsdtExchange = () => {
                   key={index}
                   className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
                 >
-                  <div className="w-14 h-14 rounded-lg bg-cta-red/20 flex items-center justify-center mb-5">
-                    <feature.icon className="w-7 h-7 text-cta-red" />
+                  <div className="w-14 h-14 rounded-lg bg-cta-orange/20 flex items-center justify-center mb-5">
+                    <feature.icon className="w-7 h-7 text-cta-orange" />
                   </div>
                   <h3 className="font-heading font-bold text-lg text-white mb-3">
                     {feature.title}
@@ -187,14 +187,14 @@ const UsdtExchange = () => {
                   key={index}
                   className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
                 >
-                  <p className="text-cta-red font-semibold text-sm mb-4">{contact.role}</p>
+                  <p className="text-cta-orange font-semibold text-sm mb-4">{contact.role}</p>
                   
                   <div className="space-y-3">
                     <a
                       href={contact.telegramLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-white hover:text-cta-red transition-colors"
+                      className="flex items-center gap-3 text-white hover:text-cta-orange transition-colors"
                     >
                       <MessageCircle className="w-5 h-5" />
                       <span className="text-sm">Telegram: {contact.telegram}</span>
@@ -205,7 +205,7 @@ const UsdtExchange = () => {
                         href={contact.whatsappLink || "#"}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-white hover:text-cta-red transition-colors"
+                        className="flex items-center gap-3 text-white hover:text-cta-orange transition-colors"
                       >
                         <Phone className="w-5 h-5" />
                         <span className="text-sm">WhatsApp: {contact.whatsapp}</span>
@@ -223,7 +223,7 @@ const UsdtExchange = () => {
                 href="https://t.me/NDpay888"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-cta-red text-white rounded-lg font-semibold hover:opacity-90 transition-all transform hover:-translate-y-1"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-cta-orange text-white rounded-lg font-semibold hover:opacity-90 transition-all transform hover:-translate-y-1"
               >
                 <MessageCircle className="w-5 h-5" />
                 t.me/NDpay888
@@ -234,7 +234,7 @@ const UsdtExchange = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-cta-red">
+        <section className="py-16 bg-cta-orange">
           <div className="container mx-auto px-4 text-center">
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Start Exchanging?
@@ -247,7 +247,7 @@ const UsdtExchange = () => {
                 href="https://t.me/LBT_00"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-cta-red rounded-lg font-semibold hover:bg-white/90 transition-all transform hover:-translate-y-1"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-cta-orange rounded-lg font-semibold hover:bg-white/90 transition-all transform hover:-translate-y-1"
               >
                 Contact on Telegram
                 <ArrowRight className="w-5 h-5" />

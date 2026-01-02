@@ -91,7 +91,7 @@ const HeroSlider = () => {
                 {index === currentSlide && (
                   <>
                     <p 
-                      className="text-cta-red text-sm md:text-base font-medium mb-4 animate-slide-in"
+                      className="text-cta-orange text-sm md:text-base font-medium mb-4 animate-slide-in"
                       style={{ animationDelay: '0.1s' }}
                     >
                       {slide.subtitle}
@@ -110,7 +110,7 @@ const HeroSlider = () => {
                     </p>
                     <a
                       href={slide.ctaLink}
-                      className="inline-flex items-center gap-2 px-8 py-4 bg-cta-red text-white rounded-lg font-semibold hover:opacity-90 transition-all transform hover:-translate-y-1 animate-slide-in"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-cta-orange text-white rounded-lg font-semibold hover:opacity-90 transition-all transform hover:-translate-y-1 animate-slide-in"
                       style={{ animationDelay: '0.4s' }}
                     >
                       {slide.cta}
@@ -146,7 +146,7 @@ const HeroSlider = () => {
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all ${
               index === currentSlide 
-                ? "bg-cta-red w-8" 
+                ? "bg-cta-orange w-8" 
                 : "bg-white/50 hover:bg-white/70"
             }`}
           />
