@@ -100,14 +100,14 @@ const UsdtExchange = () => {
       <main>
         {/* Hero Section */}
         <section className="relative pt-28 pb-16 overflow-hidden">
-          {/* Background */}
+          {/* Background Image */}
           <div 
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center bg-fixed"
             style={{ 
-              backgroundImage: `url(https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1920&q=80)` 
+              backgroundImage: `url(https://images.unsplash.com/photo-1642104704074-907c0698cbd9?w=1920&q=80)` 
             }}
           >
-            <div className="absolute inset-0 bg-[hsl(var(--darker-blue))]/95" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--darker-blue))]/80 via-[hsl(var(--darker-blue))]/85 to-[hsl(var(--darker-blue))]" />
           </div>
 
           {/* Floating particles */}
