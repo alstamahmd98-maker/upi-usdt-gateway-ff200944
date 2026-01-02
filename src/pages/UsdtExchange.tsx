@@ -99,7 +99,7 @@ const UsdtExchange = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden">
+        <section className="relative pt-24 pb-20 overflow-hidden">
           {/* Background */}
           <div 
             className="absolute inset-0 bg-cover bg-center"
@@ -111,6 +111,20 @@ const UsdtExchange = () => {
           </div>
           
           <div className="container mx-auto px-4 relative z-10">
+            {/* Hero Image */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-4xl mx-auto mb-10"
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=1200&q=80"
+                alt="USDT INR Exchange"
+                className="w-full h-48 md:h-64 object-cover rounded-2xl shadow-2xl border border-white/10"
+              />
+            </motion.div>
+
             <div className="max-w-4xl mx-auto text-center">
               <motion.h1 
                 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6 leading-tight"
