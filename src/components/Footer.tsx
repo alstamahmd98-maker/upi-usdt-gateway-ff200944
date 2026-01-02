@@ -26,11 +26,11 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <a href="#" className="flex items-center gap-2 mb-5">
-              <div className="w-10 h-10 bg-cta-orange rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-cta-blue rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">D</span>
               </div>
               <span className="font-heading font-bold text-xl">
-                DJI<span className="text-cta-orange">-PAY</span>
+                DJI<span className="text-cta-blue">-PAY</span>
               </span>
             </a>
             <p className="text-white/70 mb-6 leading-relaxed">
@@ -42,7 +42,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href="#"
-                  className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-cta-orange transition-colors"
+                  className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-cta-blue transition-colors"
                 >
                   <Icon className="w-5 h-5" />
                 </a>
@@ -89,15 +89,15 @@ const Footer = () => {
             <h4 className="font-heading font-bold text-lg mb-5">Contact Info</h4>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <MessageCircle className="w-5 h-5 text-cta-orange" />
+                <MessageCircle className="w-5 h-5 text-cta-blue" />
                 <span className="text-white/70">Telegram: @DJI149</span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-cta-orange" />
+                <Mail className="w-5 h-5 text-cta-blue" />
                 <span className="text-white/70">support@upiusdt.com</span>
               </div>
               <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-cta-orange" />
+                <MapPin className="w-5 h-5 text-cta-blue" />
                 <span className="text-white/70">New Delhi, India</span>
               </div>
             </div>

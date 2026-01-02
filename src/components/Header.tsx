@@ -39,11 +39,11 @@ const Header = () => {
         <div className="container mx-auto px-4 flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-cta-orange rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-cta-blue rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">D</span>
             </div>
             <span className="font-heading font-bold text-xl text-foreground">
-              DJI<span className="text-cta-orange">-PAY</span>
+              DJI<span className="text-cta-blue">-PAY</span>
             </span>
           </a>
 
@@ -53,7 +53,7 @@ const Header = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-foreground hover:text-cta-orange transition-colors"
+                className="text-sm font-medium text-foreground hover:text-cta-blue transition-colors"
               >
                 {link.label}
               </a>
@@ -67,14 +67,14 @@ const Header = () => {
             </button>
             <a
               href="https://t.me/DJI149"
-              className="flex items-center gap-2 px-4 py-2 bg-cta-orange text-white rounded-lg hover:opacity-90 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 bg-cta-blue text-white rounded-lg hover:opacity-90 transition-colors"
             >
               <MessageCircle className="w-4 h-4" />
               <span className="text-sm font-medium">Support</span>
             </a>
             <a
               href="#"
-              className="px-4 py-2 bg-cta-orange text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+              className="px-4 py-2 bg-cta-blue text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
             >
               WhatsApp
             </a>
@@ -105,7 +105,7 @@ const Header = () => {
               ))}
               <a
                 href="https://t.me/DJI149"
-                className="mt-2 flex items-center justify-center gap-2 px-4 py-3 bg-cta-orange text-white rounded-lg"
+                className="mt-2 flex items-center justify-center gap-2 px-4 py-3 bg-cta-blue text-white rounded-lg"
               >
                 <MessageCircle className="w-4 h-4" />
                 Contact Support

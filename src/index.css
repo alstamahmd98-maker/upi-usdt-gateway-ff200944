@@ -36,11 +36,11 @@
 
     --radius: 0.5rem;
 
-    /* Custom tokens - Orange/Amber CTA */
-    --cta-orange: 32 95% 52%;
-    --cta-orange-hover: 32 95% 45%;
-    --dark-blue: 230 60% 10%;
-    --darker-blue: 232 55% 8%;
+    /* Custom tokens - Blue CTA */
+    --cta-blue: 210 100% 50%;
+    --cta-blue-hover: 210 100% 42%;
+    --dark-blue: 220 70% 12%;
+    --darker-blue: 222 65% 8%;
     --light-gray: 210 20% 98%;
 
     --sidebar-background: 0 0% 98%;
@@ -100,20 +100,20 @@
     background: linear-gradient(135deg, hsl(var(--darker-blue)) 0%, hsl(var(--dark-blue)) 100%);
   }
 
-  .bg-cta-orange {
-    background-color: hsl(var(--cta-orange));
+  .bg-cta-blue {
+    background-color: hsl(var(--cta-blue));
   }
 
-  .bg-cta-orange:hover {
-    background-color: hsl(var(--cta-orange-hover));
+  .bg-cta-blue:hover {
+    background-color: hsl(var(--cta-blue-hover));
   }
 
-  .text-cta-orange {
-    color: hsl(var(--cta-orange));
+  .text-cta-blue {
+    color: hsl(var(--cta-blue));
   }
 
-  .border-cta-orange {
-    border-color: hsl(var(--cta-orange));
+  .border-cta-blue {
+    border-color: hsl(var(--cta-blue));
   }
 
   .shadow-card {
@@ -163,6 +163,6 @@
   transform: translateY(-50%);
   width: 3px;
   height: 60%;
-  background: hsl(var(--cta-orange));
+  background: hsl(var(--cta-blue));
   border-radius: 2px;
 }
