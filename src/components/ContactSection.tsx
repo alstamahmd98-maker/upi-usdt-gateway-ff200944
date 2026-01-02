@@ -20,24 +20,47 @@ const ContactSection = () => {
 
             {/* Contact Methods */}
             <div className="space-y-6">
+              {/* Telegram Contact */}
               <a 
                 href="https://t.me/DJI149"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-secondary rounded-xl hover:bg-primary/5 transition-colors group"
               >
-                <div className="w-12 h-12 rounded-lg bg-[#0088cc] flex items-center justify-center">
+                <div className="w-12 h-12 rounded-lg bg-[#0088cc] flex items-center justify-center shrink-0">
                   <MessageCircle className="w-6 h-6 text-white" />
                 </div>
-                <div>
+                <div className="flex-1">
                   <p className="font-heading font-bold text-foreground group-hover:text-cta-blue transition-colors">
                     Telegram
                   </p>
                   <p className="text-muted-foreground">@DJI149</p>
                 </div>
-                <ArrowRight className="w-5 h-5 text-muted-foreground ml-auto group-hover:text-cta-blue transition-colors" />
+                <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-cta-blue transition-colors" />
               </a>
 
+              {/* WhatsApp Contact */}
+              <a 
+                href="https://wa.me/447454814457"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 bg-secondary rounded-xl hover:bg-primary/5 transition-colors group"
+              >
+                <div className="w-12 h-12 rounded-lg bg-[#25D366] flex items-center justify-center shrink-0">
+                  <Phone className="w-6 h-6 text-white" />
+                </div>
+                <div className="flex-1">
+                  <p className="font-heading font-bold text-foreground group-hover:text-[#25D366] transition-colors">
+                    WhatsApp
+                  </p>
+                  <p className="text-muted-foreground">+44 7454814457</p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-[#25D366] transition-colors" />
+              </a>
+
+              {/* Email */}
               <div className="flex items-center gap-4 p-4 bg-secondary rounded-xl">
-                <div className="w-12 h-12 rounded-lg bg-cta-blue flex items-center justify-center">
+                <div className="w-12 h-12 rounded-lg bg-cta-blue flex items-center justify-center shrink-0">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -46,23 +69,14 @@ const ContactSection = () => {
                 </div>
               </div>
 
+              {/* Location */}
               <div className="flex items-center gap-4 p-4 bg-secondary rounded-xl">
-                <div className="w-12 h-12 rounded-lg bg-cta-blue flex items-center justify-center">
+                <div className="w-12 h-12 rounded-lg bg-cta-blue flex items-center justify-center shrink-0">
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <p className="font-heading font-bold text-foreground">Location</p>
                   <p className="text-muted-foreground">New Delhi, India</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 p-4 bg-secondary rounded-xl">
-                <div className="w-12 h-12 rounded-lg bg-green-500 flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <p className="font-heading font-bold text-foreground">24/7 Support</p>
-                  <p className="text-muted-foreground">Always available</p>
                 </div>
               </div>
             </div>
