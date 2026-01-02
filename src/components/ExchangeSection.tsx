@@ -1,8 +1,6 @@
 import { ArrowRight, RefreshCw, Shield, Zap } from "lucide-react";
-
 const ExchangeSection = () => {
-  return (
-    <section id="exchange" className="py-14 bg-background">
+  return <section id="exchange" className="py-14 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left Content */}
@@ -21,24 +19,24 @@ const ExchangeSection = () => {
 
             {/* Features */}
             <div className="space-y-4 mb-8">
-              {[
-                { icon: Zap, text: "Fast conversion with competitive rates" },
-                { icon: Shield, text: "Secure and stable transactions" },
-                { icon: RefreshCw, text: "D0 settlement available" }
-              ].map((item, index) => (
-                <div key={index} className="flex items-center gap-3">
+              {[{
+              icon: Zap,
+              text: "Fast conversion with competitive rates"
+            }, {
+              icon: Shield,
+              text: "Secure and stable transactions"
+            }, {
+              icon: RefreshCw,
+              text: "D0 settlement available"
+            }].map((item, index) => <div key={index} className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-cta-blue/10 flex items-center justify-center">
                     <item.icon className="w-5 h-5 text-cta-blue" />
                   </div>
                   <span className="text-foreground font-medium">{item.text}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
 
-            <a
-              href="https://t.me/DJI149"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-cta-blue text-white rounded-lg font-semibold hover:opacity-90 transition-all"
-            >
+            <a href="https://t.me/DJI149" className="inline-flex items-center gap-2 px-6 py-3 bg-cta-blue text-white rounded-lg font-semibold hover:opacity-90 transition-all">
               Learn more
               <ArrowRight className="w-5 h-5" />
             </a>
@@ -60,7 +58,7 @@ const ExchangeSection = () => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="font-heading font-bold text-2xl text-foreground">1,000</p>
+                    <p className="font-heading font-bold text-2xl text-foreground px-0 text-center">1</p>
                     <p className="text-sm text-muted-foreground">Amount</p>
                   </div>
                 </div>
@@ -79,12 +77,12 @@ const ExchangeSection = () => {
                     </div>
                     <div>
                       <p className="font-heading font-bold text-foreground">INR</p>
-                      <p className="text-sm text-muted-foreground">Indian Rupee</p>
+                      <p className="text-sm text-muted-foreground text-center">Indian Rupee</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="font-heading font-bold text-2xl text-foreground">84,500</p>
-                    <p className="text-sm text-muted-foreground">≈ 84.5 per USDT</p>
+                    <p className="font-heading font-bold text-foreground text-center text-2xl">105-110 INR</p>
+                    <p className="text-sm text-muted-foreground">T</p>
                   </div>
                 </div>
 
@@ -96,8 +94,6 @@ const ExchangeSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ExchangeSection;
