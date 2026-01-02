@@ -111,18 +111,36 @@ const UsdtExchange = () => {
           </div>
           
           <div className="container mx-auto px-4 relative z-10">
-            {/* Hero Image */}
+            {/* Exchange Rate Card */}
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
-              className="max-w-4xl mx-auto mb-10"
+              className="max-w-md mx-auto mb-10"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=1200&q=80"
-                alt="USDT INR Exchange"
-                className="w-full h-48 md:h-64 object-cover rounded-2xl shadow-2xl border border-white/10"
-              />
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-cta-blue/30 rounded-2xl blur-xl group-hover:bg-cta-blue/40 transition-all duration-500" />
+                <div className="relative bg-[hsl(var(--dark-blue))] border border-white/10 rounded-2xl p-6">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-xl bg-[#26A17B] flex items-center justify-center">
+                        <span className="text-white font-bold text-xl">₮</span>
+                      </div>
+                      <span className="text-white font-semibold text-lg">1 USDT</span>
+                    </div>
+                    <div className="text-white/50 text-2xl">=</div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-3xl md:text-4xl font-bold text-cta-blue">
+                        105-110
+                      </span>
+                      <div className="w-12 h-12 rounded-xl bg-[#FF9F00] flex items-center justify-center">
+                        <span className="text-white font-bold text-xl">₹</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-white/50 text-sm text-center mt-4">Rate confirmed via real-time coordination</p>
+                </div>
+              </div>
             </motion.div>
 
             <div className="max-w-4xl mx-auto text-center">
@@ -130,7 +148,7 @@ const UsdtExchange = () => {
                 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6 leading-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
               >
                 USDT ⇄ INR Hybrid Fund Channel | Third-party Payment | Supports IMPS / UPI / Bank Cards
               </motion.h1>
@@ -139,7 +157,7 @@ const UsdtExchange = () => {
                 className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
               >
                 Safe / Stable / Efficient, supports IMPS, UPI, bank cards; Hybrid Fund third-party payment channel. 
                 USDT prepayment, minimum 50 USDT per transaction. Contact via Telegram or WhatsApp for long-term cooperation.
