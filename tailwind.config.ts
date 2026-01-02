@@ -57,7 +57,7 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        "cta-orange": "hsl(var(--cta-orange))",
+        "cta-blue": "hsl(var(--cta-blue))",
         "dark-blue": "hsl(var(--dark-blue))",
         "darker-blue": "hsl(var(--darker-blue))",
       },
