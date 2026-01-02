@@ -145,9 +145,9 @@ const UsdtExchange = () => {
                     
                     {/* Rate display */}
                     <div className="bg-[hsl(var(--darker-blue))]/80 rounded-xl p-3 text-center">
-                      <p className="text-white/40 text-[10px] mb-1">1 USDT =</p>
-                      <p className="text-cta-blue font-bold text-2xl">
-                        105 - 110 <span className="text-white/60 text-sm font-normal">INR</span>
+                      <p className="text-white text-sm font-semibold mb-1">1 USDT =</p>
+                      <p className="text-cta-blue font-bold text-3xl">
+                        105 - 110 <span className="text-white/60 text-base font-normal">INR</span>
                       </p>
                     </div>
                   </div>
