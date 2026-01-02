@@ -192,61 +192,69 @@ const UsdtExchange = () => {
           </div>
           
           <div className="container mx-auto px-3 md:px-4 relative z-10">
-            {/* Exchange Rate Card - New Style */}
+            {/* Exchange Rate Card - Glass Style */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="max-w-xs mx-auto mb-6 md:mb-8"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, type: "spring" }}
+              className="max-w-[280px] mx-auto mb-6 md:mb-8"
             >
-              <div className="relative bg-gradient-to-br from-[hsl(var(--dark-blue))] to-[hsl(var(--darker-blue))] rounded-3xl p-1">
-                {/* Outer glow ring */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#26A17B] via-cta-blue to-[#FF9F00] opacity-30 blur-sm" />
+              <div className="relative">
+                {/* Background blur circle */}
+                <div className="absolute -inset-4 bg-cta-blue/20 rounded-full blur-2xl" />
                 
-                <div className="relative bg-[hsl(var(--darker-blue))] rounded-3xl p-4 md:p-5">
-                  {/* Top badge */}
-                  <div className="flex justify-center mb-3">
-                    <span className="px-3 py-1 bg-cta-blue/20 text-cta-blue text-[10px] font-semibold rounded-full uppercase tracking-wider">
-                      Live Rate
-                    </span>
-                  </div>
-                  
-                  {/* Main rate display */}
-                  <div className="flex items-center justify-center gap-2 md:gap-3">
-                    {/* USDT */}
-                    <div className="flex items-center gap-2">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#26A17B] flex items-center justify-center">
-                        <span className="text-white font-bold text-lg md:text-xl">₮</span>
+                <div className="relative">
+                  {/* Glass card */}
+                  <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl">
+                    {/* Currency row */}
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-2">
+                        <motion.div 
+                          className="w-8 h-8 rounded-lg bg-[#26A17B] flex items-center justify-center"
+                          whileHover={{ rotate: 10 }}
+                        >
+                          <span className="text-white font-bold text-sm">₮</span>
+                        </motion.div>
+                        <div>
+                          <p className="text-white/50 text-[10px]">From</p>
+                          <p className="text-white font-semibold text-sm">USDT</p>
+                        </div>
                       </div>
-                      <span className="text-white font-bold text-lg md:text-xl">1</span>
+                      
+                      <motion.div
+                        animate={{ rotate: [0, 180, 360] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                        className="w-6 h-6 rounded-full border border-white/20 flex items-center justify-center"
+                      >
+                        <span className="text-white/50 text-xs">⟳</span>
+                      </motion.div>
+                      
+                      <div className="flex items-center gap-2">
+                        <div className="text-right">
+                          <p className="text-white/50 text-[10px]">To</p>
+                          <p className="text-white font-semibold text-sm">INR</p>
+                        </div>
+                        <motion.div 
+                          className="w-8 h-8 rounded-lg bg-[#FF9F00] flex items-center justify-center"
+                          whileHover={{ rotate: -10 }}
+                        >
+                          <span className="text-white font-bold text-sm">₹</span>
+                        </motion.div>
+                      </div>
                     </div>
                     
-                    {/* Animated arrows */}
-                    <motion.div 
-                      className="flex items-center text-white/40"
-                      animate={{ x: [0, 3, 0] }}
-                      transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                      <span className="text-xl">⇄</span>
-                    </motion.div>
-                    
-                    {/* INR */}
-                    <div className="flex items-center gap-2">
-                      <motion.span 
-                        className="text-cta-blue font-bold text-xl md:text-2xl"
-                        animate={{ textShadow: ["0 0 0px transparent", "0 0 10px hsl(var(--cta-blue))", "0 0 0px transparent"] }}
+                    {/* Rate display */}
+                    <div className="bg-[hsl(var(--darker-blue))]/80 rounded-xl p-3 text-center">
+                      <p className="text-white/40 text-[10px] mb-1">1 USDT =</p>
+                      <motion.p 
+                        className="text-cta-blue font-bold text-2xl"
+                        animate={{ scale: [1, 1.02, 1] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                       >
-                        105-110
-                      </motion.span>
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FF9F00] flex items-center justify-center">
-                        <span className="text-white font-bold text-lg md:text-xl">₹</span>
-                      </div>
+                        105 - 110 <span className="text-white/60 text-sm font-normal">INR</span>
+                      </motion.p>
                     </div>
                   </div>
-                  
-                  {/* Bottom text */}
-                  <p className="text-white/30 text-[10px] text-center mt-3">Real-time · Telegram confirmed</p>
                 </div>
               </div>
             </motion.div>
@@ -332,8 +340,8 @@ const UsdtExchange = () => {
               </h2>
             </motion.div>
 
-            {/* Contact Cards - 1 column on mobile */}
-            <div className="flex flex-col gap-2 md:grid md:grid-cols-4 md:gap-4 max-w-6xl mx-auto">
+            {/* Contact Cards - 1 column, TG on top, WA below */}
+            <div className="flex flex-col gap-2 md:grid md:grid-cols-4 md:gap-3 max-w-6xl mx-auto">
               {contacts.map((contact, index) => (
                 <motion.div
                   key={index}
@@ -341,43 +349,39 @@ const UsdtExchange = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.03 }}
-                  className={`bg-[hsl(var(--dark-blue))]/80 backdrop-blur-sm border rounded-xl p-3 md:p-4 transition-all duration-300 ${
+                  className={`bg-[hsl(var(--dark-blue))]/80 backdrop-blur-sm border rounded-xl p-3 transition-all duration-300 ${
                     contact.isPrimary 
                       ? 'border-cta-blue/50 ring-1 ring-cta-blue/20' 
                       : 'border-white/10'
                   }`}
                 >
-                  <div className="flex items-center justify-between gap-3">
-                    <h3 className="font-heading font-semibold text-white text-xs md:text-sm shrink-0">{contact.role}</h3>
-                    
-                    <div className="flex items-center gap-3 md:gap-4 flex-1 justify-end">
-                      {/* Telegram */}
-                      <a 
-                        href={contact.telegramLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-cta-blue hover:text-white transition-colors"
-                        style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}
-                      >
-                        <MessageCircle className="w-4 h-4 text-[#229ED9]" />
-                        <span className="text-xs md:text-sm font-medium">{contact.telegram}</span>
-                      </a>
-                      
-                      {/* WhatsApp */}
-                      {contact.whatsapp && (
-                        <a 
-                          href={contact.whatsappLink || "#"}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1.5 text-cta-blue hover:text-white transition-colors"
-                          style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}
-                        >
-                          <Phone className="w-4 h-4 text-[#25D366]" />
-                          <span className="text-xs md:text-sm font-medium hidden sm:inline">{contact.whatsapp}</span>
-                        </a>
-                      )}
-                    </div>
-                  </div>
+                  <h3 className="font-heading font-semibold text-white text-xs mb-2">{contact.role}</h3>
+                  
+                  {/* Telegram */}
+                  <a 
+                    href={contact.telegramLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-cta-blue hover:text-white transition-colors mb-1.5"
+                    style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}
+                  >
+                    <MessageCircle className="w-4 h-4 text-[#229ED9]" />
+                    <span className="text-sm font-medium">{contact.telegram}</span>
+                  </a>
+                  
+                  {/* WhatsApp */}
+                  {contact.whatsapp && (
+                    <a 
+                      href={contact.whatsappLink || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-cta-blue hover:text-white transition-colors"
+                      style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}
+                    >
+                      <Phone className="w-4 h-4 text-[#25D366]" />
+                      <span className="text-sm font-medium">{contact.whatsapp}</span>
+                    </a>
+                  )}
                 </motion.div>
               ))}
             </div>
