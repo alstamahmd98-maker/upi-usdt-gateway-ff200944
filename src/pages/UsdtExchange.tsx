@@ -197,7 +197,7 @@ const UsdtExchange = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, type: "spring" }}
-              className="max-w-[280px] mx-auto mb-6 md:mb-8"
+              className="max-w-[280px] mx-auto mb-5 md:mb-6"
             >
               <div className="relative">
                 {/* Background blur circle */}
@@ -261,7 +261,7 @@ const UsdtExchange = () => {
 
             <div className="max-w-4xl mx-auto text-center px-2">
               <motion.h1 
-                className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-heading font-bold text-white mb-4 leading-snug"
+                className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-heading font-bold text-white mb-3 leading-snug"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -282,7 +282,7 @@ const UsdtExchange = () => {
         </section>
 
         {/* Features Grid - Mobile Optimized */}
-        <section className="py-8 md:py-12 relative overflow-hidden">
+        <section className="py-6 md:py-10 relative overflow-hidden">
           {/* Section background */}
           <div className="absolute inset-0 bg-[hsl(var(--darker-blue))]">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cta-blue/20 to-transparent" />
@@ -300,7 +300,7 @@ const UsdtExchange = () => {
           </div>
           
           <div className="container mx-auto px-3 md:px-4 relative z-10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 md:gap-4 max-w-6xl mx-auto">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -322,7 +322,7 @@ const UsdtExchange = () => {
         </section>
 
         {/* Contacts Section - Mobile Optimized */}
-        <section className="py-8 md:py-12 relative overflow-hidden">
+        <section className="py-6 md:py-10 relative overflow-hidden">
           {/* Section background decorations */}
           <div className="absolute inset-0">
             <div className="absolute top-1/4 right-0 w-32 h-32 bg-[#229ED9]/10 rounded-full blur-3xl" />
@@ -333,7 +333,7 @@ const UsdtExchange = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-6 md:mb-8"
+              className="text-center mb-5 md:mb-6"
             >
               <h2 className="text-lg md:text-2xl font-heading font-bold text-white">
                 Team Contacts
@@ -341,7 +341,7 @@ const UsdtExchange = () => {
             </motion.div>
 
             {/* Contact Cards - New Style */}
-            <div className="flex flex-col gap-3 md:grid md:grid-cols-4 md:gap-4 max-w-6xl mx-auto">
+            <div className="flex flex-col gap-2.5 md:grid md:grid-cols-4 md:gap-3 max-w-6xl mx-auto">
               {contacts.map((contact, index) => (
                 <motion.div
                   key={index}
@@ -427,7 +427,7 @@ const UsdtExchange = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mt-8 md:mt-12 max-w-sm md:max-w-2xl mx-auto"
+              className="mt-6 md:mt-10 max-w-sm md:max-w-2xl mx-auto"
             >
               <div className="relative">
                 {/* Animated glow background */}
