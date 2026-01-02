@@ -95,9 +95,66 @@ const contacts = [
 
 const UsdtExchange = () => {
   return (
-    <div className="min-h-screen bg-dark-gradient">
+    <div className="min-h-screen bg-dark-gradient relative overflow-hidden">
+      {/* Global Background Effects */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        {/* Gradient orbs */}
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cta-blue/5 rounded-full blur-[120px]" />
+        <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-[#26A17B]/5 rounded-full blur-[100px]" />
+        <div className="absolute bottom-1/4 left-0 w-[350px] h-[350px] bg-[#FF9F00]/5 rounded-full blur-[100px]" />
+        <div className="absolute bottom-0 right-1/4 w-[450px] h-[450px] bg-cta-blue/5 rounded-full blur-[120px]" />
+        
+        {/* Grid pattern overlay */}
+        <div 
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+            backgroundSize: '50px 50px'
+          }}
+        />
+        
+        {/* Animated floating particles */}
+        {[...Array(12)].map((_, i) => (
+          <motion.div
+            key={`particle-${i}`}
+            className="absolute w-1 h-1 bg-cta-blue/30 rounded-full"
+            style={{
+              left: `${5 + (i * 8) % 90}%`,
+              top: `${10 + (i * 13) % 80}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              x: [0, i % 2 === 0 ? 10 : -10, 0],
+              opacity: [0.2, 0.5, 0.2],
+              scale: [1, 1.5, 1],
+            }}
+            transition={{
+              duration: 4 + (i % 3),
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.4,
+            }}
+          />
+        ))}
+        
+        {/* Diagonal lines */}
+        <div className="absolute inset-0 opacity-[0.015]">
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={`line-${i}`}
+              className="absolute h-[1px] w-[200%] bg-gradient-to-r from-transparent via-white to-transparent"
+              style={{
+                top: `${i * 15}%`,
+                left: '-50%',
+                transform: 'rotate(-15deg)',
+              }}
+            />
+          ))}
+        </div>
+      </div>
+      
       <Header />
-      <main>
+      <main className="relative z-10">
         {/* Hero Section - Mobile First */}
         <section className="relative pt-20 pb-10 md:pt-28 md:pb-16 overflow-hidden">
           {/* Background Image */}
@@ -239,8 +296,24 @@ const UsdtExchange = () => {
         </section>
 
         {/* Features Grid - Mobile Optimized */}
-        <section className="py-8 md:py-12 bg-[hsl(var(--darker-blue))]">
-          <div className="container mx-auto px-3 md:px-4">
+        <section className="py-8 md:py-12 relative overflow-hidden">
+          {/* Section background */}
+          <div className="absolute inset-0 bg-[hsl(var(--darker-blue))]">
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cta-blue/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cta-blue/20 to-transparent" />
+            <motion.div 
+              className="absolute -top-20 -right-20 w-40 h-40 bg-cta-blue/10 rounded-full blur-3xl"
+              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div 
+              className="absolute -bottom-20 -left-20 w-40 h-40 bg-[#26A17B]/10 rounded-full blur-3xl"
+              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            />
+          </div>
+          
+          <div className="container mx-auto px-3 md:px-4 relative z-10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 max-w-6xl mx-auto">
               {features.map((feature, index) => (
                 <motion.div
@@ -249,7 +322,7 @@ const UsdtExchange = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-[hsl(var(--dark-blue))] border border-white/10 rounded-xl p-3 md:p-5 hover:border-cta-blue/30 transition-all duration-300"
+                  className="bg-[hsl(var(--dark-blue))]/80 backdrop-blur-sm border border-white/10 rounded-xl p-3 md:p-5 hover:border-cta-blue/30 transition-all duration-300"
                 >
                   <div className="w-9 h-9 md:w-11 md:h-11 rounded-lg bg-cta-blue/10 flex items-center justify-center mb-2 md:mb-4">
                     <feature.icon className="w-4 h-4 md:w-5 md:h-5 text-cta-blue" />
@@ -263,8 +336,13 @@ const UsdtExchange = () => {
         </section>
 
         {/* Contacts Section - Mobile Optimized */}
-        <section className="py-8 md:py-12 bg-dark-gradient">
-          <div className="container mx-auto px-3 md:px-4">
+        <section className="py-8 md:py-12 relative overflow-hidden">
+          {/* Section background decorations */}
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 right-0 w-32 h-32 bg-[#229ED9]/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-1/4 left-0 w-32 h-32 bg-[#25D366]/10 rounded-full blur-3xl" />
+          </div>
+          <div className="container mx-auto px-3 md:px-4 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
