@@ -131,16 +131,6 @@ const UsdtExchange = () => {
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
           <div className="container mx-auto px-4 relative z-10">
-            {/* Breadcrumb */}
-            <motion.nav 
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-2 text-sm text-white/50 mb-6"
-            >
-              <a href="/" className="hover:text-white transition-colors">Home</a>
-              <span className="text-white/30">/</span>
-              <span className="text-cta-blue">USDT exchange for INR</span>
-            </motion.nav>
 
             <div className="grid lg:grid-cols-2 gap-10 items-center">
               {/* Left Content */}
