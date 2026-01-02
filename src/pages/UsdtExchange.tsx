@@ -379,12 +379,15 @@ const UsdtExchange = () => {
                         <div className="w-8 h-8 rounded-lg bg-[#229ED9]/20 flex items-center justify-center group-hover/link:bg-[#229ED9]/30 transition-colors">
                           <MessageCircle className="w-4 h-4 text-[#229ED9]" />
                         </div>
-                        <span 
-                          className="text-white font-medium text-sm group-hover/link:text-[#229ED9] transition-colors"
-                          style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}
-                        >
-                          {contact.telegram}
-                        </span>
+                        <div className="flex items-center gap-1.5">
+                          <span className="text-[#229ED9] text-sm font-medium">Telegram:</span>
+                          <span 
+                            className="text-white font-medium text-sm group-hover/link:text-[#229ED9] transition-colors"
+                            style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}
+                          >
+                            {contact.telegram}
+                          </span>
+                        </div>
                       </a>
                       
                       {/* WhatsApp */}
@@ -398,12 +401,15 @@ const UsdtExchange = () => {
                           <div className="w-8 h-8 rounded-lg bg-[#25D366]/20 flex items-center justify-center group-hover/link:bg-[#25D366]/30 transition-colors">
                             <Phone className="w-4 h-4 text-[#25D366]" />
                           </div>
-                          <span 
-                            className="text-white font-medium text-sm group-hover/link:text-[#25D366] transition-colors"
-                            style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}
-                          >
-                            {contact.whatsapp}
-                          </span>
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-[#25D366] text-sm font-medium">WhatsApp:</span>
+                            <span 
+                              className="text-white font-medium text-sm group-hover/link:text-[#25D366] transition-colors"
+                              style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}
+                            >
+                              {contact.whatsapp}
+                            </span>
+                          </div>
                         </a>
                       )}
                     </div>
