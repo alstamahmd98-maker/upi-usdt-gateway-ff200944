@@ -4,15 +4,6 @@ import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 const slides = [
   {
     id: 1,
-    subtitle: "Professional and efficient payment collection and disbursement solutions in India",
-    title: "Making cross-border business connections with the Indian market simpler",
-    description: "We focus on providing platforms, e-commerce companies, and enterprises with multi-channel collection and payment services through UPI, bank cards, and wallets. Our solutions support D0 settlement and localized risk control, helping you operate steadily in the Indian market.",
-    cta: "Get Started Now",
-    ctaLink: "https://t.me/DJI149",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80"
-  },
-  {
-    id: 2,
     subtitle: "Fast Integration, Full Local Channel Support",
     title: "Fast Integration，Full Local Channel Support",
     description: "Support for UPI auto-scan, card payments, net banking, and wallets. Backed by full documentation and expert technical support, integration is faster, smoother, and worry-free.",
@@ -21,7 +12,7 @@ const slides = [
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80"
   },
   {
-    id: 3,
+    id: 2,
     subtitle: "USDT exchange for INR",
     title: "USDT ⇄ INR Hybrid Fund Channel",
     description: "Hybrid Fund · Third-party Payment · Safe / Stable / Efficient",
