@@ -314,25 +314,62 @@ const UsdtExchange = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mt-10"
+              className="mt-12 max-w-2xl mx-auto"
             >
-              <motion.div 
-                className="inline-flex items-center gap-3 px-5 py-3 bg-cta-blue/10 border border-cta-blue/30 rounded-xl"
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <span className="text-white/70 text-sm">➡ ⚡⚡ Work channel welcomes everyone:</span>
-                <a
-                  href="https://t.me/NDpay888"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-cta-blue font-semibold hover:underline inline-flex items-center gap-1 text-sm"
+              <div className="relative group">
+                {/* Animated glow background */}
+                <motion.div 
+                  className="absolute -inset-1 bg-gradient-to-r from-cta-blue/40 via-[#26A17B]/40 to-cta-blue/40 rounded-2xl blur-xl opacity-60"
+                  animate={{ 
+                    opacity: [0.4, 0.7, 0.4],
+                    scale: [1, 1.02, 1],
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                />
+                
+                {/* Main card */}
+                <motion.div 
+                  className="relative bg-gradient-to-r from-[hsl(var(--dark-blue))] via-[hsl(var(--darker-blue))] to-[hsl(var(--dark-blue))] border border-cta-blue/30 rounded-2xl p-6 overflow-hidden"
+                  whileHover={{ scale: 1.01 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  t.me/NDpay888
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-                <span className="text-white/70 text-sm">⚡⚡</span>
-              </motion.div>
+                  {/* Decorative elements */}
+                  <div className="absolute top-0 left-0 w-20 h-20 bg-cta-blue/10 rounded-full blur-2xl" />
+                  <div className="absolute bottom-0 right-0 w-24 h-24 bg-[#26A17B]/10 rounded-full blur-2xl" />
+                  
+                  <div className="relative flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
+                    {/* Icon */}
+                    <motion.div 
+                      className="w-14 h-14 rounded-xl bg-gradient-to-br from-cta-blue to-[#26A17B] flex items-center justify-center shadow-lg"
+                      animate={{ rotate: [0, 5, -5, 0] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <MessageCircle className="w-7 h-7 text-white" />
+                    </motion.div>
+                    
+                    {/* Text content */}
+                    <div className="flex-1">
+                      <h3 className="text-white font-heading font-bold text-lg mb-1">
+                        Work Channel Welcomes Everyone
+                      </h3>
+                      <p className="text-white/60 text-sm">Join our official Telegram group for latest updates</p>
+                    </div>
+                    
+                    {/* CTA Button */}
+                    <motion.a
+                      href="https://t.me/NDpay888"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-cta-blue text-white font-semibold rounded-xl shadow-lg shadow-cta-blue/30 hover:shadow-cta-blue/50 transition-all duration-300"
+                      whileHover={{ scale: 1.05, x: 3 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <span>@NDpay888</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </motion.a>
+                  </div>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </section>
