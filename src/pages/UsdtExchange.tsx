@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ArrowRight, Shield, Zap, CreditCard, MessageCircle, Phone, Wallet, HeadphonesIcon } from "lucide-react";
+import { ArrowRight, Shield, CreditCard, MessageCircle, Phone, Wallet, HeadphonesIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
 const features = [
@@ -99,7 +99,7 @@ const UsdtExchange = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-24 pb-20 overflow-hidden">
+        <section className="relative pt-28 pb-16 overflow-hidden">
           {/* Background */}
           <div 
             className="absolute inset-0 bg-cover bg-center"
@@ -109,6 +109,30 @@ const UsdtExchange = () => {
           >
             <div className="absolute inset-0 bg-[hsl(var(--darker-blue))]/95" />
           </div>
+
+          {/* Floating particles */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {[...Array(6)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-2 h-2 bg-cta-blue/20 rounded-full"
+                style={{
+                  left: `${15 + i * 15}%`,
+                  top: `${20 + (i % 3) * 25}%`,
+                }}
+                animate={{
+                  y: [0, -20, 0],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 3 + i * 0.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: i * 0.3,
+                }}
+              />
+            ))}
+          </div>
           
           <div className="container mx-auto px-4 relative z-10">
             {/* Exchange Rate Card */}
@@ -116,36 +140,61 @@ const UsdtExchange = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
-              className="max-w-md mx-auto mb-10"
+              className="max-w-lg mx-auto mb-8"
             >
               <div className="relative group">
-                <div className="absolute -inset-1 bg-cta-blue/30 rounded-2xl blur-xl group-hover:bg-cta-blue/40 transition-all duration-500" />
-                <div className="relative bg-[hsl(var(--dark-blue))] border border-white/10 rounded-2xl p-6">
-                  <div className="flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-[#26A17B] flex items-center justify-center">
-                        <span className="text-white font-bold text-xl">₮</span>
-                      </div>
-                      <span className="text-white font-semibold text-lg">1 USDT</span>
+                <motion.div 
+                  className="absolute -inset-1 bg-cta-blue/30 rounded-2xl blur-xl"
+                  animate={{ 
+                    opacity: [0.3, 0.5, 0.3],
+                    scale: [1, 1.02, 1],
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <div className="relative bg-[hsl(var(--dark-blue))] border border-white/10 rounded-2xl p-8">
+                  <div className="flex items-center justify-between gap-6">
+                    <div className="flex items-center gap-4">
+                      <motion.div 
+                        className="w-14 h-14 rounded-xl bg-[#26A17B] flex items-center justify-center shadow-lg"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <span className="text-white font-bold text-2xl">₮</span>
+                      </motion.div>
+                      <span className="text-white font-semibold text-xl">1 USDT</span>
                     </div>
-                    <div className="text-white/50 text-2xl">=</div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-3xl md:text-4xl font-bold text-cta-blue">
+                    <motion.div 
+                      className="text-white/50 text-3xl font-light"
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      =
+                    </motion.div>
+                    <div className="flex items-center gap-4">
+                      <motion.span 
+                        className="text-4xl font-bold text-cta-blue"
+                        animate={{ scale: [1, 1.02, 1] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      >
                         105-110
-                      </span>
-                      <div className="w-12 h-12 rounded-xl bg-[#FF9F00] flex items-center justify-center">
-                        <span className="text-white font-bold text-xl">₹</span>
-                      </div>
+                      </motion.span>
+                      <motion.div 
+                        className="w-14 h-14 rounded-xl bg-[#FF9F00] flex items-center justify-center shadow-lg"
+                        whileHover={{ scale: 1.1, rotate: -5 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <span className="text-white font-bold text-2xl">₹</span>
+                      </motion.div>
                     </div>
                   </div>
-                  <p className="text-white/50 text-sm text-center mt-4">Rate confirmed via real-time coordination</p>
+                  <p className="text-white/50 text-sm text-center mt-5">Rate confirmed via real-time coordination</p>
                 </div>
               </div>
             </motion.div>
 
             <div className="max-w-4xl mx-auto text-center">
               <motion.h1 
-                className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6 leading-tight"
+                className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-5 leading-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -154,7 +203,7 @@ const UsdtExchange = () => {
               </motion.h1>
               
               <motion.p 
-                className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed"
+                className="text-base md:text-lg text-white/70 leading-relaxed max-w-3xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -167,9 +216,9 @@ const UsdtExchange = () => {
         </section>
 
         {/* Features Grid */}
-        <section className="py-16 bg-[hsl(var(--darker-blue))]">
+        <section className="py-12 bg-[hsl(var(--darker-blue))]">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -177,13 +226,18 @@ const UsdtExchange = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-[hsl(var(--dark-blue))] border border-white/10 rounded-xl p-6 hover:border-cta-blue/30 transition-all duration-300"
+                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                  className="bg-[hsl(var(--dark-blue))] border border-white/10 rounded-xl p-5 hover:border-cta-blue/30 hover:shadow-lg hover:shadow-cta-blue/5 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-cta-blue/10 flex items-center justify-center mb-4">
-                    <feature.icon className="w-6 h-6 text-cta-blue" />
-                  </div>
-                  <h3 className="font-heading font-bold text-white text-lg mb-3">{feature.title}</h3>
-                  <p className="text-white/70 text-sm leading-relaxed">{feature.description}</p>
+                  <motion.div 
+                    className="w-11 h-11 rounded-lg bg-cta-blue/10 flex items-center justify-center mb-4"
+                    whileHover={{ rotate: 10, scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <feature.icon className="w-5 h-5 text-cta-blue" />
+                  </motion.div>
+                  <h3 className="font-heading font-bold text-white text-base mb-2">{feature.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -191,21 +245,21 @@ const UsdtExchange = () => {
         </section>
 
         {/* Contacts Section */}
-        <section className="py-16 bg-dark-gradient">
+        <section className="py-12 bg-dark-gradient">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center mb-8"
             >
-              <h2 className="text-2xl md:text-3xl font-heading font-bold text-white">
+              <h2 className="text-xl md:text-2xl font-heading font-bold text-white">
                 Channel Integration & Team Contacts
               </h2>
             </motion.div>
 
             {/* Contact Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
               {contacts.map((contact, index) => (
                 <motion.div
                   key={index}
@@ -213,23 +267,24 @@ const UsdtExchange = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className={`bg-[hsl(var(--dark-blue))] border rounded-xl p-5 transition-all duration-300 ${
+                  whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                  className={`bg-[hsl(var(--dark-blue))] border rounded-xl p-4 transition-all duration-300 ${
                     contact.isPrimary 
-                      ? 'border-cta-blue/50 ring-1 ring-cta-blue/20' 
+                      ? 'border-cta-blue/50 ring-1 ring-cta-blue/20 shadow-lg shadow-cta-blue/10' 
                       : 'border-white/10 hover:border-white/20'
                   }`}
                 >
-                  <h3 className="font-heading font-bold text-white mb-4">{contact.role}</h3>
+                  <h3 className="font-heading font-semibold text-white text-sm mb-3">{contact.role}</h3>
                   
                   {/* Telegram */}
                   <div className="flex items-center gap-2 mb-2">
                     <MessageCircle className="w-4 h-4 text-[#229ED9] shrink-0" />
-                    <span className="text-white/60 text-sm">Telegram:</span>
+                    <span className="text-white/50 text-xs">Telegram:</span>
                     <a 
                       href={contact.telegramLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-cta-blue hover:underline text-sm truncate"
+                      className="text-cta-blue hover:underline text-xs truncate"
                     >
                       {contact.telegram}
                     </a>
@@ -239,12 +294,12 @@ const UsdtExchange = () => {
                   {contact.whatsapp && (
                     <div className="flex items-center gap-2">
                       <Phone className="w-4 h-4 text-[#25D366] shrink-0" />
-                      <span className="text-white/60 text-sm">WhatsApp:</span>
+                      <span className="text-white/50 text-xs">WhatsApp:</span>
                       <a 
                         href={contact.whatsappLink || "#"}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-cta-blue hover:underline text-sm"
+                        className="text-cta-blue hover:underline text-xs"
                       >
                         {contact.whatsapp}
                       </a>
@@ -259,21 +314,25 @@ const UsdtExchange = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mt-12"
+              className="text-center mt-10"
             >
-              <div className="inline-flex items-center gap-3 px-6 py-4 bg-cta-blue/10 border border-cta-blue/30 rounded-xl">
-                <span className="text-white/80">➡ ⚡⚡ ➡ Work channel welcomes everyone:</span>
+              <motion.div 
+                className="inline-flex items-center gap-3 px-5 py-3 bg-cta-blue/10 border border-cta-blue/30 rounded-xl"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <span className="text-white/70 text-sm">➡ ⚡⚡ Work channel welcomes everyone:</span>
                 <a
                   href="https://t.me/NDpay888"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-cta-blue font-semibold hover:underline inline-flex items-center gap-1"
+                  className="text-cta-blue font-semibold hover:underline inline-flex items-center gap-1 text-sm"
                 >
                   t.me/NDpay888
                   <ArrowRight className="w-4 h-4" />
                 </a>
-                <span className="text-white/80">👈 ⚡⚡</span>
-              </div>
+                <span className="text-white/70 text-sm">⚡⚡</span>
+              </motion.div>
             </motion.div>
           </div>
         </section>
