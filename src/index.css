@@ -36,9 +36,9 @@
 
     --radius: 0.5rem;
 
-    /* Custom tokens - matching upiusdt.com exactly */
-    --cta-red: 0 100% 45%;
-    --cta-red-hover: 0 100% 40%;
+    /* Custom tokens - Orange/Amber CTA */
+    --cta-orange: 32 95% 52%;
+    --cta-orange-hover: 32 95% 45%;
     --dark-blue: 230 60% 10%;
     --darker-blue: 232 55% 8%;
     --light-gray: 210 20% 98%;
@@ -100,20 +100,20 @@
     background: linear-gradient(135deg, hsl(var(--darker-blue)) 0%, hsl(var(--dark-blue)) 100%);
   }
 
-  .bg-cta-red {
-    background-color: hsl(var(--cta-red));
+  .bg-cta-orange {
+    background-color: hsl(var(--cta-orange));
   }
 
-  .bg-cta-red:hover {
-    background-color: hsl(var(--cta-red-hover));
+  .bg-cta-orange:hover {
+    background-color: hsl(var(--cta-orange-hover));
   }
 
-  .text-cta-red {
-    color: hsl(var(--cta-red));
+  .text-cta-orange {
+    color: hsl(var(--cta-orange));
   }
 
-  .border-cta-red {
-    border-color: hsl(var(--cta-red));
+  .border-cta-orange {
+    border-color: hsl(var(--cta-orange));
   }
 
   .shadow-card {
@@ -163,6 +163,6 @@
   transform: translateY(-50%);
   width: 3px;
   height: 60%;
-  background: hsl(var(--cta-red));
+  background: hsl(var(--cta-orange));
   border-radius: 2px;
 }

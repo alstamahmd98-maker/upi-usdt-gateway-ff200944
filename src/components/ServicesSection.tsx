@@ -36,7 +36,7 @@ const ServicesSection = () => {
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
             Secure and seamless cross-border payments.
           </h2>
-          <a href="#" className="inline-flex items-center gap-2 text-cta-red font-medium hover:underline">
+          <a href="#" className="inline-flex items-center gap-2 text-cta-orange font-medium hover:underline">
             See All Service
             <ArrowRight className="w-4 h-4" />
           </a>
@@ -47,11 +47,11 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-white rounded-xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 border-l-4 border-transparent hover:border-cta-red"
+              className="group bg-white rounded-xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 border-l-4 border-transparent hover:border-cta-orange"
             >
               {/* Icon */}
-              <div className="w-14 h-14 rounded-lg bg-cta-red/10 flex items-center justify-center mb-5 group-hover:bg-cta-red transition-colors">
-                <service.icon className="w-6 h-6 text-cta-red group-hover:text-white transition-colors" />
+              <div className="w-14 h-14 rounded-lg bg-cta-orange/10 flex items-center justify-center mb-5 group-hover:bg-cta-orange transition-colors">
+                <service.icon className="w-6 h-6 text-cta-orange group-hover:text-white transition-colors" />
               </div>
 
               {/* Content */}
@@ -63,7 +63,7 @@ const ServicesSection = () => {
               </p>
               <a 
                 href={service.link}
-                className="inline-flex items-center gap-1 text-sm font-medium text-cta-red hover:underline"
+                className="inline-flex items-center gap-1 text-sm font-medium text-cta-orange hover:underline"
               >
                 See Details
                 <ArrowRight className="w-4 h-4" />
