@@ -29,10 +29,10 @@ const newsItems = [
 
 const NewsSection = () => {
   return (
-    <section id="news" className="py-20 bg-secondary/30">
+    <section id="news" className="py-14 bg-secondary/30">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-cta-blue text-sm font-semibold uppercase tracking-wider">
             Blog & News
           </span>
@@ -45,7 +45,7 @@ const NewsSection = () => {
         </div>
 
         {/* News Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {newsItems.map((item, index) => (
             <article
               key={index}
