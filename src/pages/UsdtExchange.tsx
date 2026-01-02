@@ -340,48 +340,74 @@ const UsdtExchange = () => {
               </h2>
             </motion.div>
 
-            {/* Contact Cards - 1 column, TG on top, WA below */}
-            <div className="flex flex-col gap-2 md:grid md:grid-cols-4 md:gap-3 max-w-6xl mx-auto">
+            {/* Contact Cards - New Style */}
+            <div className="flex flex-col gap-3 md:grid md:grid-cols-4 md:gap-4 max-w-6xl mx-auto">
               {contacts.map((contact, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.03 }}
-                  className={`bg-[hsl(var(--dark-blue))]/80 backdrop-blur-sm border rounded-xl p-3 transition-all duration-300 ${
-                    contact.isPrimary 
-                      ? 'border-cta-blue/50 ring-1 ring-cta-blue/20' 
-                      : 'border-white/10'
-                  }`}
+                  transition={{ delay: index * 0.04 }}
+                  className="group relative"
                 >
-                  <h3 className="font-heading font-semibold text-white text-xs mb-2">{contact.role}</h3>
+                  {/* Hover glow effect */}
+                  <div className={`absolute -inset-0.5 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                    contact.isPrimary ? 'bg-cta-blue/30' : 'bg-white/10'
+                  }`} />
                   
-                  {/* Telegram */}
-                  <a 
-                    href={contact.telegramLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-cta-blue hover:text-white transition-colors mb-1.5"
-                    style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}
-                  >
-                    <MessageCircle className="w-4 h-4 text-[#229ED9]" />
-                    <span className="text-sm font-medium">{contact.telegram}</span>
-                  </a>
-                  
-                  {/* WhatsApp */}
-                  {contact.whatsapp && (
-                    <a 
-                      href={contact.whatsappLink || "#"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-cta-blue hover:text-white transition-colors"
-                      style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}
-                    >
-                      <Phone className="w-4 h-4 text-[#25D366]" />
-                      <span className="text-sm font-medium">{contact.whatsapp}</span>
-                    </a>
-                  )}
+                  <div className={`relative bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-sm rounded-2xl p-4 border transition-all duration-300 ${
+                    contact.isPrimary 
+                      ? 'border-cta-blue/40' 
+                      : 'border-white/10 group-hover:border-white/20'
+                  }`}>
+                    {/* Role badge */}
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className={`w-2 h-2 rounded-full ${contact.isPrimary ? 'bg-cta-blue' : 'bg-white/30'}`} />
+                      <span className="text-white/70 text-[11px] font-medium uppercase tracking-wider">{contact.role}</span>
+                    </div>
+                    
+                    {/* Contact links */}
+                    <div className="space-y-2">
+                      {/* Telegram */}
+                      <a 
+                        href={contact.telegramLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-[#229ED9]/10 transition-colors group/link"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#229ED9]/20 flex items-center justify-center group-hover/link:bg-[#229ED9]/30 transition-colors">
+                          <MessageCircle className="w-4 h-4 text-[#229ED9]" />
+                        </div>
+                        <span 
+                          className="text-white font-medium text-sm group-hover/link:text-[#229ED9] transition-colors"
+                          style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}
+                        >
+                          {contact.telegram}
+                        </span>
+                      </a>
+                      
+                      {/* WhatsApp */}
+                      {contact.whatsapp && (
+                        <a 
+                          href={contact.whatsappLink || "#"}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-[#25D366]/10 transition-colors group/link"
+                        >
+                          <div className="w-8 h-8 rounded-lg bg-[#25D366]/20 flex items-center justify-center group-hover/link:bg-[#25D366]/30 transition-colors">
+                            <Phone className="w-4 h-4 text-[#25D366]" />
+                          </div>
+                          <span 
+                            className="text-white font-medium text-sm group-hover/link:text-[#25D366] transition-colors"
+                            style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif' }}
+                          >
+                            {contact.whatsapp}
+                          </span>
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
