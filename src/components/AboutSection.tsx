@@ -73,7 +73,7 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <span className="text-cta-orange text-sm font-semibold uppercase tracking-wider">
+            <span className="text-cta-red text-sm font-semibold uppercase tracking-wider">
               Industry-Leading
             </span>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 mb-6">
@@ -112,7 +112,7 @@ const AboutSection = () => {
               {/* Floating Card */}
               <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-xl max-w-xs">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-cta-orange flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-cta-red flex items-center justify-center">
                     <span className="text-white font-bold text-xl">✓</span>
                   </div>
                   <div>
