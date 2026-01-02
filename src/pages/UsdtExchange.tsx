@@ -1,189 +1,127 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ArrowRight, Shield, Zap, CreditCard, MessageCircle, Phone, Sparkles, TrendingUp, Globe, Clock } from "lucide-react";
+import { ArrowRight, Shield, Zap, CreditCard, MessageCircle, Phone, CheckCircle2, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const features = [
   {
     icon: CreditCard,
-    title: "Multi-rail Clearing & Settlement",
-    description: "IMPS / UPI / bank cards in parallel to boost success rate and payout speed."
+    title: "Multi-rail Settlement",
+    description: "IMPS / UPI / Bank cards in parallel"
   },
   {
     icon: Shield,
     title: "Prepaid Guarantee",
-    description: "USDT prepayment with transparent flow; flexible quota from 50 USDT for trials and scaling."
+    description: "Transparent flow, min 50 USDT"
   },
   {
     icon: Zap,
-    title: "Stability & Risk Control",
-    description: "Hybrid fund routing with failover to reduce interruptions and failures."
+    title: "Hybrid Fund Routing",
+    description: "Failover for stability"
   },
   {
     icon: MessageCircle,
-    title: "Real-time Communication",
-    description: "Telegram / WhatsApp coverage; final rate & route based on live coordination."
+    title: "24/7 Support",
+    description: "Telegram & WhatsApp"
   }
 ];
 
-const stats = [
-  { icon: TrendingUp, value: "99.9%", label: "Success Rate" },
-  { icon: Clock, value: "< 5min", label: "Settlement Time" },
-  { icon: Globe, value: "24/7", label: "Support Available" },
-  { icon: Sparkles, value: "50+", label: "Partner Networks" }
+const highlights = [
+  "Safe & Stable Transactions",
+  "D0 Settlement Available", 
+  "Competitive Exchange Rates",
+  "Real-time Coordination"
 ];
 
 const contacts = [
-  {
-    role: "Company Lead / Boss",
-    telegram: "@LBT_00",
-    telegramLink: "https://t.me/LBT_00",
-    whatsapp: "+44 7454814457",
-    whatsappLink: "https://wa.me/447454814457",
-    isPrimary: true
-  },
-  {
-    role: "Customer Service",
-    telegram: "@ND_pay",
-    telegramLink: "https://t.me/ND_pay",
-    whatsapp: null,
-    whatsappLink: null,
-    isPrimary: false
-  },
-  {
-    role: "Customer Service",
-    telegram: "@qiansy66",
-    telegramLink: "https://t.me/qiansy66",
-    whatsapp: "+44 7599830171",
-    whatsappLink: "https://wa.me/447599830171",
-    isPrimary: false
-  },
-  {
-    role: "Customer Service",
-    telegram: "@fang12345600000000",
-    telegramLink: "https://t.me/fang12345600000000",
-    whatsapp: "+44 7512418870",
-    whatsappLink: "https://wa.me/447512418870",
-    isPrimary: false
-  },
-  {
-    role: "Customer Service",
-    telegram: "@maque666666",
-    telegramLink: "https://t.me/maque666666",
-    whatsapp: "+44 7742606892",
-    whatsappLink: "https://wa.me/447742606892",
-    isPrimary: false
-  },
-  {
-    role: "Customer Service",
-    telegram: "@xiaobao880604",
-    telegramLink: "https://t.me/xiaobao880604",
-    whatsapp: "+44 7856408736",
-    whatsappLink: "https://wa.me/447856408736",
-    isPrimary: false
-  },
-  {
-    role: "Customer Service",
-    telegram: "@jie5555555666",
-    telegramLink: "https://t.me/jie5555555666",
-    whatsapp: "+44 7746820536",
-    whatsappLink: "https://wa.me/447746820536",
-    isPrimary: false
-  },
-  {
-    role: "Customer Service",
-    telegram: "@NDpay186",
-    telegramLink: "https://t.me/NDpay186",
-    whatsapp: "+85 294480554",
-    whatsappLink: "https://wa.me/85294480554",
-    isPrimary: false
-  }
+  { role: "Boss", telegram: "@LBT_00", telegramLink: "https://t.me/LBT_00", whatsapp: "+44 7454814457", whatsappLink: "https://wa.me/447454814457", isPrimary: true },
+  { role: "Service", telegram: "@ND_pay", telegramLink: "https://t.me/ND_pay", whatsapp: null, whatsappLink: null, isPrimary: false },
+  { role: "Service", telegram: "@qiansy66", telegramLink: "https://t.me/qiansy66", whatsapp: "+44 7599830171", whatsappLink: "https://wa.me/447599830171", isPrimary: false },
+  { role: "Service", telegram: "@fang12345600000000", telegramLink: "https://t.me/fang12345600000000", whatsapp: "+44 7512418870", whatsappLink: "https://wa.me/447512418870", isPrimary: false },
+  { role: "Service", telegram: "@maque666666", telegramLink: "https://t.me/maque666666", whatsapp: "+44 7742606892", whatsappLink: "https://wa.me/447742606892", isPrimary: false },
+  { role: "Service", telegram: "@xiaobao880604", telegramLink: "https://t.me/xiaobao880604", whatsapp: "+44 7856408736", whatsappLink: "https://wa.me/447856408736", isPrimary: false },
+  { role: "Service", telegram: "@jie5555555666", telegramLink: "https://t.me/jie5555555666", whatsapp: "+44 7746820536", whatsappLink: "https://wa.me/447746820536", isPrimary: false },
+  { role: "Service", telegram: "@NDpay186", telegramLink: "https://t.me/NDpay186", whatsapp: "+85 294480554", whatsappLink: "https://wa.me/85294480554", isPrimary: false }
 ];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-};
 
 const UsdtExchange = () => {
   return (
-    <div className="min-h-screen bg-[hsl(var(--darker-blue))] overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       <Header />
       <main>
-        {/* Hero Section with Premium Design */}
-        <section className="relative pt-20 pb-12 lg:pb-16 overflow-hidden">
-          {/* Animated Background Elements */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-cta-blue/20 rounded-full blur-[100px] animate-pulse" />
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-cta-blue/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-cta-blue/5 to-transparent rounded-full" />
-          </div>
+        {/* Hero Section - Clean & Bold */}
+        <section className="relative pt-28 pb-16 overflow-hidden">
+          {/* Subtle gradient orbs */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[150px]" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/5 rounded-full blur-[120px]" />
           
-          {/* Grid Pattern Overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
-
           <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-6xl mx-auto">
+              {/* Main Hero Content */}
+              <div className="text-center mb-12">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full mb-6">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+                    <span className="text-emerald-400 text-sm font-medium">Live Exchange Available</span>
+                  </div>
+                  
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
+                    USDT <span className="text-blue-400">⇄</span> INR
+                  </h1>
+                  
+                  <p className="text-xl md:text-2xl text-white/60 mb-8 max-w-2xl mx-auto font-light">
+                    Hybrid Fund Channel · Third-party Payment
+                  </p>
+                </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              {/* Left Content */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-cta-blue/10 border border-cta-blue/30 rounded-full mb-4">
-                  <Sparkles className="w-4 h-4 text-cta-blue" />
-                  <span className="text-cta-blue text-sm font-medium">Premium Exchange Service</span>
-                </div>
-                
-                <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] mb-4">
-                  USDT ⇄ INR
-                  <br />
-                  <span className="bg-gradient-to-r from-cta-blue via-blue-400 to-cta-blue bg-clip-text text-transparent">
-                    Hybrid Fund Channel
-                  </span>
-                </h1>
-                
-                <p className="text-white/70 text-base md:text-lg mb-5 leading-relaxed max-w-xl">
-                  Third-party Payment Solutions with IMPS, UPI & Bank Cards support. 
-                  Experience <span className="text-white font-medium">safe, stable & efficient</span> transactions.
-                </p>
-
-                {/* Key Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {[
-                    "IMPS / UPI / Bank Cards",
-                    "Hybrid Fund",
-                    "Prepayment USDT",
-                    "Min 50 USDT"
-                  ].map((tag, index) => (
-                    <motion.span
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.3 + index * 0.1 }}
-                      className="px-3 py-1.5 bg-white/5 border border-white/10 text-white/80 rounded-lg text-xs backdrop-blur-sm"
-                    >
-                      {tag}
-                    </motion.span>
-                  ))}
-                </div>
+                {/* Exchange Rate Card - Centered */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="max-w-md mx-auto mb-10"
+                >
+                  <div className="relative group">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-emerald-500 to-blue-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
+                    <div className="relative bg-slate-900/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+                      <div className="flex items-center justify-between gap-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-11 h-11 rounded-xl bg-[#26A17B] flex items-center justify-center">
+                            <span className="text-white font-bold text-lg">₮</span>
+                          </div>
+                          <span className="text-white font-semibold">1 USDT</span>
+                        </div>
+                        <div className="text-white/40">=</div>
+                        <div className="flex items-center gap-3">
+                          <span className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                            105-110
+                          </span>
+                          <div className="w-11 h-11 rounded-xl bg-[#FF9F00] flex items-center justify-center">
+                            <span className="text-white font-bold text-lg">₹</span>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-white/40 text-xs text-center mt-4">Rate confirmed via real-time coordination</p>
+                    </div>
+                  </div>
+                </motion.div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-wrap gap-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="flex flex-wrap justify-center gap-4"
+                >
                   <a
                     href="https://t.me/LBT_00"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cta-blue to-blue-500 text-white rounded-lg font-semibold shadow-lg shadow-cta-blue/25 hover:shadow-cta-blue/40 transition-all duration-300 hover:-translate-y-1"
+                    className="group inline-flex items-center gap-2 px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25"
                   >
                     Start Trading
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -192,302 +130,184 @@ const UsdtExchange = () => {
                     href="https://t.me/NDpay888"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/20 text-white rounded-lg font-semibold hover:bg-white/10 transition-all duration-300"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-xl font-semibold transition-all duration-300"
                   >
                     <MessageCircle className="w-5 h-5" />
                     Join Channel
                   </a>
-                </div>
-              </motion.div>
+                </motion.div>
+              </div>
 
-              {/* Right - Premium Rate Card */}
+              {/* Highlights */}
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="flex flex-wrap justify-center gap-x-8 gap-y-3"
               >
-                {/* Glowing border effect */}
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-cta-blue via-blue-400 to-cta-blue rounded-3xl blur opacity-30" />
-                
-                <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-6 md:p-8">
-                  {/* Card Header */}
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#26A17B] to-[#1a7a5c] flex items-center justify-center shadow-lg">
-                        <span className="text-white font-bold text-xl">₮</span>
-                      </div>
-                      <div>
-                        <p className="text-white font-bold text-lg">USDT</p>
-                        <p className="text-white/50 text-sm">Tether USD</p>
-                      </div>
-                    </div>
-                    <div className="px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full">
-                      <span className="text-green-400 text-xs font-medium">Live Rate</span>
-                    </div>
+                {highlights.map((item, index) => (
+                  <div key={index} className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <span className="text-white/70 text-sm">{item}</span>
                   </div>
-
-                  {/* Exchange Rate Display */}
-                  <div className="text-center py-5 border-y border-white/10">
-                    <p className="text-white/50 text-sm mb-2">Current Exchange Rate</p>
-                    <div className="flex items-center justify-center gap-3">
-                      <span className="text-white text-2xl">1 USDT</span>
-                      <span className="text-cta-blue text-2xl">=</span>
-                      <span className="font-heading text-4xl md:text-5xl font-bold bg-gradient-to-r from-cta-blue to-blue-400 bg-clip-text text-transparent">
-                        105-110
-                      </span>
-                      <span className="text-white text-2xl">INR</span>
-                    </div>
-                    <p className="text-white/40 text-sm mt-3">
-                      *Final rate confirmed via real-time coordination
-                    </p>
-                  </div>
-
-                  {/* Card Footer */}
-                  <div className="flex items-center justify-between mt-5">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#FF9F00] to-[#e08b00] flex items-center justify-center">
-                        <span className="text-white font-bold">₹</span>
-                      </div>
-                      <div>
-                        <p className="text-white font-medium">INR</p>
-                        <p className="text-white/50 text-xs">Indian Rupee</p>
-                      </div>
-                    </div>
-                    <a
-                      href="https://t.me/LBT_00"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-6 py-3 bg-cta-blue text-white rounded-xl font-medium hover:bg-cta-blue/90 transition-colors"
-                    >
-                      Get Quote
-                    </a>
-                  </div>
-                </div>
+                ))}
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-8 bg-gradient-to-b from-[hsl(var(--darker-blue))] to-[hsl(var(--dark-blue))]">
+        {/* Features Grid - Minimal */}
+        <section className="py-16 border-y border-white/5">
           <div className="container mx-auto px-4">
-            <motion.div 
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4"
-            >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="text-center p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 transition-all duration-300"
-                >
-                  <div className="w-10 h-10 mx-auto mb-3 rounded-lg bg-cta-blue/20 flex items-center justify-center">
-                    <stat.icon className="w-6 h-6 text-cta-blue" />
-                  </div>
-                  <p className="font-heading text-2xl font-bold text-white mb-1">{stat.value}</p>
-                  <p className="text-white/60 text-sm">{stat.label}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="py-12 bg-[hsl(var(--dark-blue))] relative">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:40px_40px]" />
-          
-          <div className="container mx-auto px-4 relative z-10">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center max-w-2xl mx-auto mb-10"
-            >
-              <span className="inline-block px-3 py-1 bg-cta-blue/10 border border-cta-blue/30 rounded-full text-cta-blue text-xs font-medium mb-3">
-                Why Choose Us
-              </span>
-              <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-3">
-                Premium Features
-              </h2>
-              <p className="text-white/60 text-base">
-                Industry-leading solutions for seamless USDT to INR exchange
-              </p>
-            </motion.div>
-
-            <motion.div 
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid md:grid-cols-2 lg:grid-cols-4 gap-4"
-            >
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-1">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  variants={itemVariants}
-                  className="group relative"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group p-6 bg-white/[0.02] hover:bg-white/[0.05] border-r border-white/5 last:border-r-0 transition-colors"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-cta-blue/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 hover:border-cta-blue/30 transition-all duration-300 h-full">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cta-blue/30 to-cta-blue/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <feature.icon className="w-6 h-6 text-cta-blue" />
-                    </div>
-                    <h3 className="font-heading font-bold text-base text-white mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-white/60 text-sm leading-relaxed">
-                      {feature.description}
-                    </p>
+                  <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors">
+                    <feature.icon className="w-5 h-5 text-blue-400" />
                   </div>
+                  <h3 className="font-semibold text-white mb-1">{feature.title}</h3>
+                  <p className="text-white/50 text-sm">{feature.description}</p>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* Team Contacts Section */}
-        <section className="py-12 bg-[hsl(var(--darker-blue))] relative">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-cta-blue/10 rounded-full blur-[150px]" />
-          
-          <div className="container mx-auto px-4 relative z-10">
-            <motion.div 
+        {/* Contacts Section - Clean Grid */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center max-w-2xl mx-auto mb-10"
+              className="text-center mb-10"
             >
-              <span className="inline-block px-3 py-1 bg-cta-blue/10 border border-cta-blue/30 rounded-full text-cta-blue text-xs font-medium mb-3">
-                Get in Touch
-              </span>
-              <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-3">
-                Our Team
-              </h2>
-              <p className="text-white/60 text-base">
-                Connect with our dedicated support team via Telegram or WhatsApp
-              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Contact Our Team</h2>
+              <p className="text-white/50">Reach us via Telegram or WhatsApp</p>
             </motion.div>
 
-            <motion.div 
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
+            {/* Primary Contact */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="grid md:grid-cols-2 lg:grid-cols-4 gap-4"
+              className="max-w-lg mx-auto mb-8"
             >
-              {contacts.map((contact, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className={`relative group ${contact.isPrimary ? 'lg:col-span-2 lg:row-span-1' : ''}`}
-                >
-                  {contact.isPrimary && (
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-cta-blue to-blue-400 rounded-2xl blur opacity-30" />
-                  )}
-                  <div className={`relative h-full bg-gradient-to-br ${contact.isPrimary ? 'from-cta-blue/20 to-white/5' : 'from-white/10 to-white/5'} backdrop-blur-sm border ${contact.isPrimary ? 'border-cta-blue/30' : 'border-white/10'} rounded-xl p-4 hover:border-cta-blue/50 transition-all duration-300`}>
-                    {contact.isPrimary && (
-                      <div className="absolute top-3 right-3 px-2 py-0.5 bg-cta-blue/20 rounded-full">
-                        <span className="text-cta-blue text-xs font-medium">Primary Contact</span>
-                      </div>
-                    )}
-                    
-                    <div className={`w-10 h-10 rounded-lg ${contact.isPrimary ? 'bg-cta-blue' : 'bg-white/10'} flex items-center justify-center mb-3`}>
-                      <MessageCircle className={`w-5 h-5 ${contact.isPrimary ? 'text-white' : 'text-cta-blue'}`} />
-                    </div>
-                    
-                    <p className="text-cta-blue font-semibold text-xs mb-3">{contact.role}</p>
-                    
-                    <div className="space-y-2">
-                      <a
-                        href={contact.telegramLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-white/80 hover:text-white transition-colors group/link"
-                      >
-                        <div className="w-7 h-7 rounded-md bg-[#229ED9]/20 flex items-center justify-center group-hover/link:bg-[#229ED9]/30 transition-colors">
-                          <MessageCircle className="w-4 h-4 text-[#229ED9]" />
-                        </div>
-                        <span className="text-xs">{contact.telegram}</span>
-                      </a>
-                      
-                      {contact.whatsapp && (
-                        <a
-                          href={contact.whatsappLink || "#"}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-white/80 hover:text-white transition-colors group/link"
-                        >
-                          <div className="w-7 h-7 rounded-md bg-[#25D366]/20 flex items-center justify-center group-hover/link:bg-[#25D366]/30 transition-colors">
-                            <Phone className="w-4 h-4 text-[#25D366]" />
-                          </div>
-                          <span className="text-xs">{contact.whatsapp}</span>
-                        </a>
-                      )}
-                    </div>
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-xl blur opacity-30 group-hover:opacity-50 transition-opacity" />
+                <div className="relative bg-slate-900 border border-white/10 rounded-xl p-5">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-medium text-blue-400 bg-blue-500/10 px-2 py-1 rounded">Primary Contact</span>
+                    <span className="text-xs text-white/40">Company Lead</span>
                   </div>
-                </motion.div>
-              ))}
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href="https://t.me/LBT_00"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-4 py-3 bg-[#229ED9]/10 hover:bg-[#229ED9]/20 border border-[#229ED9]/20 rounded-lg text-[#229ED9] font-medium transition-colors"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      @LBT_00
+                    </a>
+                    <a
+                      href="https://wa.me/447454814457"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-4 py-3 bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/20 rounded-lg text-[#25D366] font-medium transition-colors"
+                    >
+                      <Phone className="w-4 h-4" />
+                      WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
-            {/* Work Channel CTA */}
-            <motion.div 
+            {/* Other Contacts Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-4xl mx-auto">
+              {contacts.filter(c => !c.isPrimary).map((contact, index) => (
+                <motion.a
+                  key={index}
+                  href={contact.telegramLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className="group flex items-center gap-3 p-3 bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 hover:border-white/10 rounded-lg transition-all"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-[#229ED9]/10 flex items-center justify-center shrink-0">
+                    <MessageCircle className="w-4 h-4 text-[#229ED9]" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-white text-sm font-medium truncate">{contact.telegram}</p>
+                    {contact.whatsapp && (
+                      <p className="text-white/40 text-xs truncate">{contact.whatsapp}</p>
+                    )}
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-white/20 group-hover:text-white/40 shrink-0 ml-auto transition-colors" />
+                </motion.a>
+              ))}
+            </div>
+
+            {/* Work Channel */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mt-10 text-center"
+              className="text-center mt-10"
             >
-              <p className="text-white/50 text-sm mb-3">Official Work Channel</p>
+              <p className="text-white/40 text-sm mb-3">Official Work Channel</p>
               <a
                 href="https://t.me/NDpay888"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cta-blue to-blue-500 text-white rounded-xl font-semibold shadow-xl shadow-cta-blue/30 hover:shadow-cta-blue/50 transition-all duration-300 hover:-translate-y-1"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
               >
-                <MessageCircle className="w-5 h-5" />
-                <span className="text-base">t.me/NDpay888</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <MessageCircle className="w-4 h-4" />
+                t.me/NDpay888
+                <ArrowRight className="w-4 h-4" />
               </a>
             </motion.div>
           </div>
         </section>
 
-        {/* Premium CTA Section */}
-        <section className="relative py-14 overflow-hidden">
-          {/* Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-cta-blue via-blue-600 to-blue-700" />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-[100px]" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-900/50 rounded-full blur-[100px]" />
-          
-          <div className="container mx-auto px-4 relative z-10">
-            <motion.div 
+        {/* Bottom CTA - Simple */}
+        <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-500">
+          <div className="container mx-auto px-4 text-center">
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="max-w-3xl mx-auto text-center"
             >
-              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                 Ready to Start Trading?
               </h2>
-              <p className="text-white/80 text-base mb-6 max-w-2xl mx-auto">
-                Join thousands of satisfied traders. Experience premium USDT to INR exchange with competitive rates and lightning-fast settlement.
+              <p className="text-white/80 mb-6 max-w-lg mx-auto">
+                Experience premium USDT to INR exchange with competitive rates and fast settlement.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-wrap justify-center gap-3">
                 <a
                   href="https://t.me/LBT_00"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 px-6 py-3 bg-white text-cta-blue rounded-xl font-bold text-base shadow-xl hover:shadow-white/30 transition-all duration-300 hover:-translate-y-1"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-white/90 transition-colors"
                 >
                   Contact on Telegram
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
                   href="/"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white rounded-xl font-bold text-base hover:bg-white/20 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white border border-white/20 rounded-lg font-semibold hover:bg-white/20 transition-colors"
                 >
                   Back to Home
                 </a>
