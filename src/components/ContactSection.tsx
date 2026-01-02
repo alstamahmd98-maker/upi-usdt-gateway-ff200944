@@ -12,8 +12,8 @@ const contacts = [
     role: "Service", 
     telegram: "@ND_pay", 
     telegramLink: "https://t.me/ND_pay", 
-    whatsapp: null, 
-    whatsappLink: null
+    whatsapp: "+44 7599830171", 
+    whatsappLink: "https://wa.me/447599830171"
   },
   { 
     role: "Service", 
