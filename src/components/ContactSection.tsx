@@ -7,7 +7,7 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left - Contact Info */}
           <div>
-            <span className="text-primary text-sm font-semibold uppercase tracking-wider">
+            <span className="text-cta-red text-sm font-semibold uppercase tracking-wider">
               Contact Us
             </span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
@@ -28,16 +28,16 @@ const ContactSection = () => {
                   <MessageCircle className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <p className="font-heading font-bold text-foreground group-hover:text-primary transition-colors">
+                  <p className="font-heading font-bold text-foreground group-hover:text-cta-red transition-colors">
                     Telegram
                   </p>
                   <p className="text-muted-foreground">@DJI149</p>
                 </div>
-                <ArrowRight className="w-5 h-5 text-muted-foreground ml-auto group-hover:text-primary transition-colors" />
+                <ArrowRight className="w-5 h-5 text-muted-foreground ml-auto group-hover:text-cta-red transition-colors" />
               </a>
 
               <div className="flex items-center gap-4 p-4 bg-secondary rounded-xl">
-                <div className="w-12 h-12 rounded-lg bg-cta-orange flex items-center justify-center">
+                <div className="w-12 h-12 rounded-lg bg-cta-red flex items-center justify-center">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -47,7 +47,7 @@ const ContactSection = () => {
               </div>
 
               <div className="flex items-center gap-4 p-4 bg-secondary rounded-xl">
-                <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center">
+                <div className="w-12 h-12 rounded-lg bg-cta-red flex items-center justify-center">
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -82,7 +82,7 @@ const ContactSection = () => {
                   <input
                     type="text"
                     placeholder="John Doe"
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                    className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-cta-red/20 focus:border-cta-red transition-colors"
                   />
                 </div>
                 <div>
@@ -92,7 +92,7 @@ const ContactSection = () => {
                   <input
                     type="email"
                     placeholder="john@example.com"
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                    className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-cta-red/20 focus:border-cta-red transition-colors"
                   />
                 </div>
               </div>
@@ -103,7 +103,7 @@ const ContactSection = () => {
                 <input
                   type="text"
                   placeholder="How can we help?"
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                  className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-cta-red/20 focus:border-cta-red transition-colors"
                 />
               </div>
               <div>
@@ -113,12 +113,12 @@ const ContactSection = () => {
                 <textarea
                   rows={4}
                   placeholder="Your message..."
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none"
+                  className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-cta-red/20 focus:border-cta-red transition-colors resize-none"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+                className="w-full py-3 bg-cta-red text-white rounded-lg font-semibold hover:opacity-90 transition-colors"
               >
                 Send Message
               </button>

@@ -38,13 +38,13 @@ const FeaturesGrid = () => {
               className="group relative bg-white rounded-xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 border border-border/50"
             >
               {/* Number Badge */}
-              <div className="absolute -top-3 left-6 px-3 py-1 bg-primary text-white text-xs font-bold rounded">
+              <div className="absolute -top-3 left-6 px-3 py-1 bg-cta-red text-white text-xs font-bold rounded">
                 / {feature.number}
               </div>
 
               {/* Icon */}
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 transition-all">
-                <feature.icon className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
+              <div className="w-16 h-16 rounded-full bg-cta-red/10 flex items-center justify-center mb-5 group-hover:bg-cta-red group-hover:scale-110 transition-all">
+                <feature.icon className="w-7 h-7 text-cta-red group-hover:text-white transition-colors" />
               </div>
 
               {/* Content */}
@@ -56,7 +56,7 @@ const FeaturesGrid = () => {
               </p>
 
               {/* Bottom accent */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary rounded-b-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-cta-red rounded-b-xl opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
           ))}
         </div>

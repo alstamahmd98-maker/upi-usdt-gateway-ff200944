@@ -33,7 +33,7 @@ const NewsSection = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-primary text-sm font-semibold uppercase tracking-wider">
+          <span className="text-cta-red text-sm font-semibold uppercase tracking-wider">
             Blog & News
           </span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-4 mb-4">
@@ -59,7 +59,7 @@ const NewsSection = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-primary text-white text-xs font-medium rounded">
+                  <span className="px-3 py-1 bg-cta-red text-white text-xs font-medium rounded">
                     {item.category}
                   </span>
                 </div>
@@ -79,7 +79,7 @@ const NewsSection = () => {
                   </div>
                 </div>
 
-                <h3 className="font-heading font-bold text-lg text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                <h3 className="font-heading font-bold text-lg text-foreground mb-3 line-clamp-2 group-hover:text-cta-red transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
@@ -88,7 +88,7 @@ const NewsSection = () => {
 
                 <a 
                   href="#"
-                  className="inline-flex items-center gap-1 text-primary font-medium text-sm hover:underline"
+                  className="inline-flex items-center gap-1 text-cta-red font-medium text-sm hover:underline"
                 >
                   Read more
                   <ArrowRight className="w-4 h-4" />
