@@ -24,12 +24,12 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { label: "Home", href: "#" },
-    { label: "USDT exchange for INR", href: "#exchange" },
-    { label: "Core Business", href: "#services" },
-    { label: "Industry News", href: "#news" },
-    { label: "About", href: "#about" },
-    { label: "Contact Us", href: "#contact" },
+    { label: "Home", href: "/" },
+    { label: "USDT exchange for INR", href: "/usdt-inr-exchange" },
+    { label: "Core Business", href: "/#services" },
+    { label: "Industry News", href: "/#news" },
+    { label: "About", href: "/#about" },
+    { label: "Contact Us", href: "/#contact" },
   ];
 
   return (
@@ -38,7 +38,7 @@ const Header = () => {
       <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-white"}`}>
         <div className="container mx-auto px-4 flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 bg-cta-red rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">D</span>
             </div>
