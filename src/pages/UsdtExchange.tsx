@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ArrowRight, Shield, CreditCard, MessageCircle, Phone, Wallet, HeadphonesIcon } from "lucide-react";
+import { ArrowRight, Shield, CreditCard, MessageCircle, Phone, Wallet, HeadphonesIcon, Send } from "lucide-react";
 import { motion } from "framer-motion";
 
 const features = [
@@ -344,7 +344,7 @@ const UsdtExchange = () => {
                       animate={{ rotate: [0, 5, -5, 0] }}
                       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                     >
-                      <MessageCircle className="w-7 h-7 text-white" />
+                      <Send className="w-7 h-7 text-white" />
                     </motion.div>
                     
                     {/* Text content */}
