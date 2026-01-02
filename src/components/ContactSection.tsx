@@ -61,10 +61,10 @@ const contacts = [
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 bg-dark-gradient">
+    <section id="contact" className="py-14 bg-dark-gradient">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <span className="text-cta-blue text-sm font-semibold uppercase tracking-wider">
             Contact Us
           </span>
@@ -77,7 +77,7 @@ const ContactSection = () => {
         </div>
 
         {/* Contact Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-6xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 max-w-6xl mx-auto mb-10">
           {contacts.map((contact, index) => (
             <div 
               key={index}
@@ -123,7 +123,7 @@ const ContactSection = () => {
         </div>
 
         {/* Additional Info */}
-        <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
           <div className="flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-xl">
             <Mail className="w-5 h-5 text-cta-blue" />
             <span className="text-white/80">support@upiusdt.com</span>

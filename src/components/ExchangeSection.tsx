@@ -2,9 +2,9 @@ import { ArrowRight, RefreshCw, Shield, Zap } from "lucide-react";
 
 const ExchangeSection = () => {
   return (
-    <section id="exchange" className="py-20 bg-background">
+    <section id="exchange" className="py-14 bg-background">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left Content */}
           <div>
             <span className="inline-block px-4 py-1.5 rounded-full bg-cta-blue/10 text-cta-blue text-sm font-semibold mb-4">

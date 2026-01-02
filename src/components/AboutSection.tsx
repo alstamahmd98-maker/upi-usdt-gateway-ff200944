@@ -58,7 +58,7 @@ const CounterNumber = ({ target, suffix }: { target: number; suffix: string }) =
 
 const AboutSection = () => {
   return (
-    <section id="about" className="relative py-20 overflow-hidden">
+    <section id="about" className="relative py-14 overflow-hidden">
       {/* Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
@@ -70,7 +70,7 @@ const AboutSection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left Content */}
           <div>
             <span className="text-cta-blue text-sm font-semibold uppercase tracking-wider">

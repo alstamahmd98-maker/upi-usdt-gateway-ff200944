@@ -29,10 +29,10 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-20 bg-secondary/50">
+    <section id="services" className="py-14 bg-secondary/50">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
             Secure and seamless cross-border payments.
           </h2>
@@ -43,7 +43,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {services.map((service, index) => (
             <div
               key={index}
