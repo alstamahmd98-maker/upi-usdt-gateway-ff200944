@@ -279,27 +279,26 @@ const UsdtExchange = () => {
                   {/* Telegram */}
                   <div className="flex items-center gap-2 mb-2">
                     <MessageCircle className="w-4 h-4 text-[#229ED9] shrink-0" />
-                    <span className="text-white/50 text-xs">Telegram:</span>
+                    <span className="text-white/50 text-xs">TG:</span>
                     <a 
                       href={contact.telegramLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-cta-blue hover:underline text-xs truncate"
+                      className="text-cta-blue hover:text-white font-mono font-medium text-sm tracking-wide truncate transition-colors"
                     >
                       {contact.telegram}
                     </a>
                   </div>
                   
-                  {/* WhatsApp */}
                   {contact.whatsapp && (
                     <div className="flex items-center gap-2">
                       <Phone className="w-4 h-4 text-[#25D366] shrink-0" />
-                      <span className="text-white/50 text-xs">WhatsApp:</span>
+                      <span className="text-white/50 text-xs">WA:</span>
                       <a 
                         href={contact.whatsappLink || "#"}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-cta-blue hover:underline text-xs"
+                        className="text-cta-blue hover:text-white font-mono font-medium text-sm tracking-wide transition-colors"
                       >
                         {contact.whatsapp}
                       </a>
