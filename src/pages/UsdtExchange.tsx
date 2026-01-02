@@ -284,7 +284,8 @@ const UsdtExchange = () => {
                       href={contact.telegramLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-cta-blue hover:text-white font-code font-bold text-sm tracking-wider truncate transition-colors"
+                      className="text-cta-blue hover:text-white font-medium text-sm tracking-wide truncate transition-colors"
+                      style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif' }}
                     >
                       {contact.telegram}
                     </a>
@@ -298,7 +299,8 @@ const UsdtExchange = () => {
                         href={contact.whatsappLink || "#"}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-cta-blue hover:text-white font-code font-bold text-sm tracking-wider transition-colors"
+                        className="text-cta-blue hover:text-white font-medium text-sm tracking-wide transition-colors"
+                        style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif' }}
                       >
                         {contact.whatsapp}
                       </a>
